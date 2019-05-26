@@ -1,0 +1,13 @@
+{
+  "port": 10000,
+  "schoolCode": "N100002892",
+  "api_key": "",
+  "proxy": "/buldang/api",
+  "database": {
+    "db": "buldang_bab",
+    "user": "root",
+    "password": "joung0406",
+    "host": "192.168.0.192",
+    "port": 3306
+  }
+}
