@@ -5,7 +5,6 @@ const routerName = config.get('proxy') + '/timetable'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
-    await statistics.count('TIMETABLE')
     const params = req.body.action['params'] || {}
     const date = JSON.parse(params['sys_date'] || '{}')
     const dateString = date['date']
