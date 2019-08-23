@@ -7,7 +7,7 @@
     "db": "buldang_bab",
     "user": "root",
     "password": "joung0406",
-    "host": "192.168.0.192",
+    "host": "192.168.0.5",
     "port": 3306
   }
 }

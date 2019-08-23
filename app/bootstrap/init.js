@@ -4,10 +4,12 @@ const bodyParser = require('body-parser')
 
 const calendar = require('../controller/Calendar')
 const meal = require('../controller/Meal')
+const timetable = require('../controller/Timetable')
 const weather = require('../controller/Weather')
 
 const calendarSkill = require('../skill/calendar')
 const mealSkill = require('../skill/meal')
+const timetableSkill = require('../skill/timetable')
 const weatherSkill = require('../skill/weather')
 
 const { timeStamp } = require('../common/util')
@@ -21,10 +23,12 @@ module.exports = async (app, express) => {
 
   await calendar.init(school)
   await meal.init(school)
+  await timetable.init('천안불당고등학교')
   await weather.init()
 
   await calendar.update()
   await meal.update()
+  await timetable.update()
   await weather.update()
 
   await require('./scheduler').init()
@@ -42,6 +46,7 @@ module.exports = async (app, express) => {
   // Openbuilder 스킬 라우팅 등록
   calendarSkill(app)
   mealSkill(app)
+  timetableSkill(app)
   weatherSkill(app)
 
   console.log(timeStamp() + 'Initialization complete! ' + (new Date() - startTime + 'ms').yellow)
