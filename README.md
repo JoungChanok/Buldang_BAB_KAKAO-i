@@ -16,6 +16,7 @@
 
 - 주요 기능
   - 🍚 오늘, 내일 급식 조회
+  - 📘 학급 시간표 조회
   - 📅 이번 달 학사일정 조회
   - ⛅ 불당동 날씨 예보 확인
   
@@ -23,7 +24,7 @@
 ## 개발환경
 - Visual Studio Code
 ```
-npm install
+yarn install
 node main.js
 ```
 카카오 플러스친구 ID : <b>buldangbab</b>  

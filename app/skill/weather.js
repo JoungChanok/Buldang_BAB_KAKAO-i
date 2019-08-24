@@ -24,9 +24,9 @@ module.exports = app => {
         ],
         quickReplies: [
           {
-            label: '홈으로',
+            label: '메뉴 보기',
             action: 'message',
-            messageText: '홈으로'
+            messageText: '메뉴 보기'
           }
         ]
       }

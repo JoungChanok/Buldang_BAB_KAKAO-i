@@ -33,14 +33,14 @@ module.exports = app => {
         ],
         quickReplies: [
           {
-            label: '이번 달 급식도 볼래요',
+            label: '시간표좀 알려줄래?',
             action: 'message',
-            messageText: '이번 달 급식'
+            messageText: '시간표좀 알려줘'
           },
           {
-            label: '홈으로',
+            label: '메뉴 보기',
             action: 'message',
-            messageText: '홈으로'
+            messageText: '메뉴 보기'
           }
         ]
       }
