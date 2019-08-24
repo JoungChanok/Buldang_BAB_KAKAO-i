@@ -6,14 +6,14 @@ var Calendar = {}
 Calendar.init = async function (school) {
   this.school = school
   await CalendarModel.init()
-  console.log(timeStamp() + 'Calendar model defined'.cyan)
+  console.log(timeStamp() + '학사 일정 모델을 정의했어요.'.cyan)
 }
 
 Calendar.update = async function () {
   try {
     const result = await this.school.getCalendar()
     await CalendarModel.update(result)
-    console.log(timeStamp() + 'Calendar data updated'.green)
+    console.log(timeStamp() + '학사 일정 데이터가 업데이트 되었어요.'.green)
   } catch (e) {
     console.log(timeStamp() + e.message.red)
   }
@@ -29,11 +29,11 @@ Calendar.get = async function () {
       }
       return resultString.replace(/\n$/, '')
     } else {
-      return resultString + '😥학사일정 정보가 없습니다😥'
+      return resultString + '😥학사일정 정보가 없어요😥'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪학사일정 데이터를 불러오는 중 문제가 발생했습니다🤪'
+    return '🤪학사일정 데이터를 불러오는 중 문제가 발생했어요🤪'
   }
 }
 

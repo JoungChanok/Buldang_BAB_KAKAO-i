@@ -14,7 +14,7 @@ Timetable._numberEmoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣',
 Timetable.init = async function (schoolKeyword) {
   this._school = schoolKeyword
   await TimetableModel.init()
-  console.log(timeStamp() + 'Timetable model defined'.cyan)
+  console.log(timeStamp() + '시간표 모델을 정의했어요.'.cyan)
 }
 
 Timetable.update = async function () {
@@ -22,7 +22,7 @@ Timetable.update = async function () {
     const result = await new Promise((resolve, reject) => {
       request(this._url, (err, res, body) => {
         if (err) {
-          reject(new Error('Can not load school information'))
+          reject(new Error('학교 정보를 로드할 수 없어요.'))
         }
 
         // 검색할 문자열 인덱스 조회
@@ -30,7 +30,7 @@ Timetable.update = async function () {
         const idx2 = body.indexOf('sc_data(\'')
 
         if (idx === -1 || idx2 === -1) {
-          reject(new Error('Can not find keyword to extract from source'))
+          reject(new Error('소스에서 추출할 키워드를 찾을 수 없어요.'))
         }
 
         // school_ra의 접근 코드 추출
@@ -56,9 +56,9 @@ Timetable.update = async function () {
             let jsonString = body.substr(0, body.lastIndexOf('}') + 1)
             let searchData = JSON.parse(jsonString)['학교검색']
             if (err) {
-              reject(new Error('Can not extract school code'))
+              reject(new Error('학교 코드를 추출할 수 없어요'))
             } else if (searchData.length > 1) {
-              reject(new Error('Too many school results. Enter more details'))
+              reject(new Error('학교 검색결과가 너무 많아요. 자세하게 입력해주세요.'))
             } else {
               const da1 = '0'
               const s7 = this.scData[0] + searchData[0][3]
@@ -67,14 +67,14 @@ Timetable.update = async function () {
 
               request(this._baseUrl + sc3, (err, res, body) => {
                 if (err || !body) {
-                  reject(new Error('Can not find timetable data'))
+                  reject(new Error('시간표 데이터를 찾을수가 없어요.'))
                 }
                 resolve(JSON.parse(body.substr(0, body.lastIndexOf('}') + 1)))
               })
             }
           })
         } else {
-          reject(new Error('Can not extract url'))
+          reject(new Error('URL을 추출할 수 없어요.'))
         }
       })
     })
@@ -165,7 +165,7 @@ Timetable.update = async function () {
     }
 
     await TimetableModel.update(insertData)
-    console.log(timeStamp() + 'Timetable data updated'.green)
+    console.log(timeStamp() + '시간표가 업데이트 되었어요.'.green)
   } catch (e) {
     console.log(e)
     console.log(timeStamp() + e.message.red)
@@ -183,11 +183,11 @@ Timetable.get = async function (grade, classNum, weekday) {
       }
       return timetableResult.replace(/\n$/, '')
     } else {
-      return '시간표 정보가 없습니다.'
+      return '시간표 정보가 없는 것 같아요.'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '시간표 데이터를 불러오는 중 문제가 발생했습니다.'
+    return '시간표 데이터를 불러오는 중 문제가 발생했어요.'
   }
 }
 

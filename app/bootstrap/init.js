@@ -17,7 +17,7 @@ const school = require('./school').school
 
 module.exports = async (app, express) => {
   const startTime = new Date()
-  console.log(timeStamp() + 'Server initializing..')
+  console.log(timeStamp() + '서버 초기화 중이에요..')
 
   await require('./database').init()
 
@@ -49,5 +49,5 @@ module.exports = async (app, express) => {
   timetableSkill(app)
   weatherSkill(app)
 
-  console.log(timeStamp() + 'Initialization complete! ' + (new Date() - startTime + 'ms').yellow)
+  console.log(timeStamp() + '초기화를 끝냈어요!' + (new Date() - startTime + 'ms').yellow)
 }

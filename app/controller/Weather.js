@@ -12,7 +12,7 @@ Weather._clock = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗'
 
 Weather.init = async function () {
   await WeatherModel.init()
-  console.log(timeStamp() + 'Weather model defined'.cyan)
+  console.log(timeStamp() + '날씨 예보 모델을 정의했어요.'.cyan)
 }
 
 Weather.update = async function () {
@@ -43,7 +43,7 @@ Weather.update = async function () {
     })
   })
   await WeatherModel.update(result)
-  console.log(timeStamp() + 'Weather data updated'.green)
+  console.log(timeStamp() + '날씨 정보가 업데이트 되었어요.'.green)
 }
 
 Weather.get = async function () {
@@ -62,13 +62,13 @@ Weather.get = async function () {
                         `❔ 강수확률: ${row.pop}%, ${row.wfKor}\n` +
                         `💧 습도: ${row.reh}%\n\n`
       })
-      return resultString + pub + ' 발표\n불당동 날씨 기준'
+      return resultString + pub + ' 발표에요\n불당동 날씨 기준 입니다'
     } else {
-      return '😥날씨 데이터가 없습니다😥'
+      return '😥날씨 데이터가 없어요😥'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪날씨 데이터를 불러오는 중 문제가 발생했습니다🤪'
+    return '🤪날씨 데이터를 불러오는 중 문제가 발생했어요🤪'
   }
 }
 

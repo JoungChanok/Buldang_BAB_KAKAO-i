@@ -7,10 +7,10 @@ const { timeStamp } = require('./app/common/util')
 
 require('./app/bootstrap/init')(app, express).then(() => {
   app.listen(app.get('port'), () => {
-    console.log(timeStamp() + colors.rainbow('BULDANG KAKAO server started, port: ' + app.get('port')))
+    console.log(timeStamp() + colors.rainbow('Buldang BAB Started, PORT: ' + app.get('port')))
   })
 }).catch(e => {
-  console.log(timeStamp() + 'Server initialization error: ' + e.message.red)
+  console.log(timeStamp() + '서버 초기화 도중 오류가 발생했어요: ' + e.message.red)
 })
 
 process.on('uncaughtException', e => {

@@ -18,5 +18,5 @@ exports.init = () => {
     await Weather.update()
   })
 
-  console.log(timeStamp() + 'Scheduler initialized'.cyan)
+  console.log(timeStamp() + '스케줄러를 초기화 했어요.'.cyan)
 }
