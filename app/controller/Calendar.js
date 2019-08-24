@@ -13,7 +13,7 @@ Calendar.update = async function () {
   try {
     const result = await this.school.getCalendar()
     await CalendarModel.update(result)
-    console.log(timeStamp() + '학사 일정 데이터가 업데이트 되었어요.'.green)
+    console.log(timeStamp() + '학사 일정이 업데이트 되었어요.'.green)
   } catch (e) {
     console.log(timeStamp() + e.message.red)
   }

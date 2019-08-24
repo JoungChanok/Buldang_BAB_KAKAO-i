@@ -8,7 +8,7 @@ Meal._week = ['일', '월', '화', '수', '목', '금', '토']
 Meal.init = async function (school) {
   this.school = school
   await MealModel.init()
-  console.log(timeStamp() + '급식 정보 모델이 정의 되었어요.'.cyan)
+  console.log(timeStamp() + '급식 정보 모델을 정의했어요.'.cyan)
 }
 
 Meal.update = async function () {
