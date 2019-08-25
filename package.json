@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okchans/BULDANG_BAB-KAKAO-i.git"
+    "url": "git+https://github.com/JoungChanok/BULDANG_BAB-KAKAO-i.git"
   },
   "keywords": [
     "chatbot",
@@ -19,9 +19,9 @@
   "author": "JoungChanok",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okchans/BULDANG_BAB-KAKAO-i/issues"
+    "url": "https://github.com/JoungChanok/BULDANG_BAB-KAKAO-i/issues"
   },
-  "homepage": "https://github.com/okchans/BULDANG_BAB-KAKAO-i#readme",
+  "homepage": "https://github.com/JoungChanok/BULDANG_BAB-KAKAO-i#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
