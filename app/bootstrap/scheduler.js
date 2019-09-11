@@ -3,6 +3,7 @@ const schedule = require('node-schedule')
 const Calendar = require('../controller/Calendar')
 const Meal = require('../controller/Meal')
 const Weather = require('../controller/Weather')
+const Timetable = require('../controller/Timetable')
 
 const { timeStamp } = require('../common/util')
 
@@ -16,6 +17,7 @@ exports.init = () => {
   // 매 시간마다 날씨데이터 갱신
   schedule.scheduleJob('0 0 * * * * *', async () => {
     await Weather.update()
+    await Timetable.update()
   })
 
   console.log(timeStamp() + '스케줄러를 초기화 했어요.'.cyan)
