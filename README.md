@@ -24,7 +24,7 @@
 ## 개발환경
 - Visual Studio Code
 ```
-npm install
+yarn install
 node main.js
 ```
 카카오 플러스친구 ID : <b>buldangbab</b>  

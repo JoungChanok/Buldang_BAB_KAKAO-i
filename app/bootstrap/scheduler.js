@@ -1,9 +1,9 @@
 const schedule = require('node-schedule')
 
-const Calendar = require('../controller/Calendar')
 const Meal = require('../controller/Meal')
-const Weather = require('../controller/Weather')
 const Timetable = require('../controller/Timetable')
+const Calendar = require('../controller/Calendar')
+const Weather = require('../controller/Weather')
 
 const { timeStamp } = require('../common/util')
 

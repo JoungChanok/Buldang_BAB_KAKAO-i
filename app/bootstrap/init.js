@@ -2,14 +2,14 @@ const config = require('config')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
-const calendar = require('../controller/Calendar')
 const meal = require('../controller/Meal')
 const timetable = require('../controller/Timetable')
+const calendar = require('../controller/Calendar')
 const weather = require('../controller/Weather')
 
-const calendarSkill = require('../skill/calendar')
 const mealSkill = require('../skill/meal')
 const timetableSkill = require('../skill/timetable')
+const calendarSkill = require('../skill/calendar')
 const weatherSkill = require('../skill/weather')
 
 const { timeStamp } = require('../common/util')
@@ -21,14 +21,14 @@ module.exports = async (app, express) => {
 
   await require('./database').init()
 
-  await calendar.init(school)
   await meal.init(school)
   await timetable.init('천안불당고등학교')
+  await calendar.init(school)
   await weather.init()
 
-  await calendar.update()
   await meal.update()
   await timetable.update()
+  await calendar.update()
   await weather.update()
 
   await require('./scheduler').init()
@@ -44,9 +44,9 @@ module.exports = async (app, express) => {
   app.use(bodyParser.json())
 
   // Openbuilder 스킬 라우팅 등록
-  calendarSkill(app)
   mealSkill(app)
   timetableSkill(app)
+  calendarSkill(app)
   weatherSkill(app)
 
   console.log(timeStamp() + '초기화를 끝냈어요!' + (new Date() - startTime + 'ms').yellow)
