@@ -2,7 +2,7 @@
   "port": 10000,
   "schoolCode": "N100002892",
   "api_key": "",
-  "proxy": "/buldang/api",
+  "proxy": "/bdhigh/api",
   "database": {
     "db": "buldang_bab",
     "user": "root",
