@@ -12,12 +12,12 @@ exports.init = () => {
   schedule.scheduleJob('1 0 0 * * * *', async () => {
     await Meal.update()
     await Calendar.update()
+    await Timetable.update()
   })
 
   // 매 시간마다 날씨데이터 갱신
   schedule.scheduleJob('0 0 * * * * *', async () => {
     await Weather.update()
-    await Timetable.update()
   })
 
   console.log(timeStamp() + '스케줄러를 초기화 했어요.'.cyan)
