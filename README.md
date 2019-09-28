@@ -24,10 +24,10 @@
 ## 개발환경
 - Visual Studio Code
 ```
-yarn install
+npm install
 node main.js
 ```
-카카오 플러스친구 ID : <b>buldangbab</b>  
+카카오 플러스친구 ID : <b>불당밥</b>  
 카카오 플러스친구 프로필 [바로가기](http://pf.kakao.com/_hxgXrC)
 
 ## 정보
