@@ -4,10 +4,10 @@
   "api_key": "",
   "proxy": "/bdhigh/api",
   "database": {
-    "db": "qrtmsdhx2n7q3j2k",
-    "user": "mbmkp1xt0pmaj67m",
-    "password": "s4w4lt4upbtnmue9",
-    "host": "nkpl8b2jg68m87ht.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "db": "buldang_bab",
+    "user": "root",
+    "password": "joung0406",
+    "host": "localhost",
     "port": 3306
   }
 }
