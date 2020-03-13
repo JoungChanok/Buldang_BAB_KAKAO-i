@@ -3,6 +3,10 @@
   "schoolCode": "N100002892",
   "api_key": "",
   "proxy": "/bdhigh/api",
+  "admin": {
+    "id": "chanok0406",
+    "password": "joung0406"
+  },
   "database": {
     "db": "rr11qtqpbtk49xf8",
     "user": "gbs1tpn7rjbry119",
