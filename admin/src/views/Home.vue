@@ -5,12 +5,10 @@
         <div id="icon"></div>
       </div>
     </transition>
+    <div id="header">불당밥 통계센터</div><div class="panel col-pc-1 col-mb-1"></div>
     <div class="panel col-pc-2 col-mb-1">
       <h3>Menu usage</h3>
       <canvas id="chart"></canvas>
-      <div class="button-area">
-        <button>Update</button>
-      </div>
     </div>
   </div>
 </template>
