@@ -7,7 +7,7 @@ const { timeStamp } = require('../common/util')
 
 module.exports = app => {
   app.get('/admin', (req, res) => {
-    fs.readFile('/admin/dist/index.html', 'utf-8', (err, data) => {
+    fs.readFile('./public/index.html', 'utf-8', (err, data) => {
       if (err) {
         console.log(timeStamp() + err.message.red)
         res.writeHead(500, { 'Content-Type': 'text/html' })

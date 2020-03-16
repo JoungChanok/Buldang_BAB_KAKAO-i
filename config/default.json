@@ -8,10 +8,10 @@
     "password": "joung0406"
   },
   "database": {
-    "db": "buldang_bab",
-    "user": "root",
-    "password": "joung0406",
-    "host": "localhost",
+    "db": "rr11qtqpbtk49xf8",
+    "user": "gbs1tpn7rjbry119",
+    "password": "e8ls836b4p7busoi",
+    "host": "nkpl8b2jg68m87ht.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306
   }
 }
