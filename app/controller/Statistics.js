@@ -39,11 +39,11 @@ Statistics.get = async function () {
                     stat['calendar'] +
                     stat['weather']
 
-      return `🍚 급식: ${(stat['meal'] / total * 100).toFixed(2)}%\n` +
-             `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n` +
-             `📅 학사일정: ${(stat['calendar'] / total * 100).toFixed(2)}%\n` +
-             `⛅ 날씨: ${(stat['weather'] / total * 100).toFixed(2)}%\n` +
-             `✔️ 전체 기능 요청 수: ${total}회\n`
+      return `🍚 급식: ${(stat['meal'] / total * 100).toFixed(2)}%\n\n` +
+             `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n\n` +
+             `📅 학사일정: ${(stat['calendar'] / total * 100).toFixed(2)}%\n\n` +
+             `⛅ 날씨: ${(stat['weather'] / total * 100).toFixed(2)}%\n\n` +
+             `✔️ 전체 기능 요청 수: ${total}회`
     } else {
       return '🤪 통계 데이터가 없습니다 🤪'
     }

@@ -21,11 +21,6 @@ const Statistics = sequelize.define('Statistics', {
     type: Sequelize.INTEGER,
     allowNull: false,
     defaultValue: 0
-  },
-  bus: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0
   }
 }, {
   freezeTableName: true
@@ -37,8 +32,7 @@ exports.init = async () => {
     meal: 0,
     timetable: 0,
     calendar: 0,
-    weather: 0,
-    bus: 0
+    weather: 0
   })
 }
 
@@ -51,8 +45,7 @@ exports.reset = async () => {
     meal: 0,
     timetable: 0,
     calendar: 0,
-    weather: 0,
-    bus: 0
+    weather: 0
   })
 }
 
