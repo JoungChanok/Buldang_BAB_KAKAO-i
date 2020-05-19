@@ -22,7 +22,7 @@ module.exports = app => {
         outputs: [
           {
             simpleImage: {
-                imageUrl: "https://github.com/JoungChanok/Buldang_BAB_KAKAO-i/blob/master/images/meal.png",
+                imageUrl: "https://i.postimg.cc/sgjNf0rc/meal.png",
                 altText: "서버에 오류가 발생했습니다."
             }
           },
