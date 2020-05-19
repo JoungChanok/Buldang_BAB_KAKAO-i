@@ -18,7 +18,7 @@ module.exports = app => {
               title: '🌈 기상청 날씨정보입니다!',
               description: weatherData,
               thumbnail: {
-                imageUrl: 'https://i.postimg.cc/Bvn4Khq0/Calendar.png'
+                imageUrl: 'https://i.postimg.cc/W4Yj6M3J/weather.png'
               }
             }
           },
