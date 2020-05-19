@@ -1,10 +1,12 @@
 const config = require('config')
+const statistics = require('../controller/Statistics')
 const controller = require('../controller/Meal')
 
 const routerName = config.get('proxy') + '/meal'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
+    await statistics.count('MEAL')
     const params = req.body.action['params'] || {}
     const type = JSON.parse(params['sys_date'] || '{}')
     const mealData = await controller.get(type['dateTag'])
@@ -21,21 +23,24 @@ module.exports = app => {
       template: {
         outputs: [
           {
-            simpleImage: {
-                imageUrl: "https://i.postimg.cc/sgjNf0rc/meal.png",
-                altText: "서버에 오류가 발생했습니다."
+            basicCard: {
+              title: typeString,
+              description: mealData,
+              thumbnail: {
+                imageUrl: 'https://i.postimg.cc/sgjNf0rc/meal.png'
+              }
             }
           },
-          {
-            simpleText: {
-              text: typeString
-            }
-          },
-          {
-            simpleText: {
-              text: mealData
-            }
-          }
+          // {
+          //   simpleText: {
+          //     text: typeString
+          //   }
+          // },
+          // {
+          //   simpleText: {
+          //     text: mealData
+          //   }
+          // }
         ],
         quickReplies: [
           {

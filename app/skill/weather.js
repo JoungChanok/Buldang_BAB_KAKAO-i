@@ -1,10 +1,12 @@
 const config = require('config')
+const statistics = require('../controller/Statistics')
 const controller = require('../controller/Weather')
 
 const routerName = config.get('proxy') + '/weather'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
+    await statistics.count('WEATHER')
     const weatherData = await controller.get()
 
     res.json({
@@ -12,15 +14,24 @@ module.exports = app => {
       template: {
         outputs: [
           {
-            simpleText: {
-              text: '🌈 기상청 날씨정보입니다!'
+            basicCard: {
+              title: '🌈 기상청 날씨정보입니다!',
+              description: weatherData,
+              thumbnail: {
+                imageUrl: 'https://i.postimg.cc/Bvn4Khq0/Calendar.png'
+              }
             }
           },
-          {
-            simpleText: {
-              text: weatherData
-            }
-          }
+          // {
+          //   simpleText: {
+          //     text: '🌈 기상청 날씨정보입니다!'
+          //   }
+          // },
+          // {
+          //   simpleText: {
+          //     text: weatherData
+          //   }
+          // }
         ],
         quickReplies: [
           {
