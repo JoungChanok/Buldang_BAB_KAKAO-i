@@ -21,6 +21,12 @@ module.exports = app => {
       template: {
         outputs: [
           {
+            simpleImage: {
+                imageUrl: "https://github.com/JoungChanok/Buldang_BAB_KAKAO-i/blob/master/images/meal.png",
+                altText: "서버에 오류가 발생했습니다."
+            }
+          },
+          {
             simpleText: {
               text: typeString
             }
