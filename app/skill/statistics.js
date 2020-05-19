@@ -14,23 +14,13 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              title: '여러분들이 사용한 메뉴의 사용량 통계입니다! 😃',
+              title: '여러분들이 사용한 메뉴의 사용량 통계입니다!',
               description: statData,
               thumbnail: {
                 imageUrl: 'https://i.postimg.cc/HkVW1Gqr/Statistics.png'
               }
             }
-          },
-          // {
-          //   simpleText: {
-          //     text: '여러분들이 사용한 메뉴의 사용량 통계입니다! 😃'
-          //   }
-          // },
-          // {
-          //   simpleText: {
-          //     text: statData
-          //   }
-          // }
+          }
         ],
         quickReplies: [
           {

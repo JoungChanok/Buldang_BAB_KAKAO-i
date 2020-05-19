@@ -62,7 +62,7 @@ Weather.get = async function () {
                         `🤔 강수확률: ${row.pop}%, ${row.wfKor}\n` +
                         `💧 습도: ${row.reh}%\n\n`
       })
-      return resultString + pub + ' 발표에요 🤗\n불당동 날씨 기준 입니다 😉'
+      return resultString + '불당동 날씨 기준 입니다 😉'
     } else {
       return '😥날씨 데이터가 없어요😥'
     }
