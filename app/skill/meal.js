@@ -11,11 +11,11 @@ module.exports = app => {
     const type = JSON.parse(params['sys_date'] || '{}')
     const mealData = await controller.get(type['dateTag'])
 
-    let typeString = 'https://i.postimg.cc/htwMt7Y0/Today-Meal.png'
+    let typeString = '🍚 오늘의 급식을 알려드릴게요!\n\n'
     if (type['dateTag'] === 'tomorrow') {
-      typeString = 'https://i.postimg.cc/SKMd2xFb/Tomorrow-Meal.png'
+      typeString = '🍱 내일의 급식을 알려드릴게요!\n\n'
     } else if (type['dateTag'] === 'yesterday') {
-      typeString = 'https://i.postimg.cc/xCGP5p1s/Yesterday-Meal.png'
+      typeString = '지난 급식 정보는 제공하지 않아요..😭\n\n'
     }
 
     res.json({
@@ -24,9 +24,9 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: mealData,
+              description: typeString + mealData,
               thumbnail: {
-                imageUrl: typeString
+                imageUrl: 'https://i.postimg.cc/sgjNf0rc/meal.png'
               }
             }
           },

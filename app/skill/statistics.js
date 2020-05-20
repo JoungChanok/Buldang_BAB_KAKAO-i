@@ -14,8 +14,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              title: '여러분들이 사용한 메뉴의 사용량 통계입니다!',
-              description: statData,
+              description:'여러분들이 사용한 메뉴의 사용량 통계입니다!\n\n' + statData,
               thumbnail: {
                 imageUrl: 'https://i.postimg.cc/HkVW1Gqr/Statistics.png'
               }

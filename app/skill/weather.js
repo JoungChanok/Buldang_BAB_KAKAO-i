@@ -15,23 +15,12 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              title: '🌈 기상청 날씨정보입니다!',
-              description: weatherData,
+              description: '🌈 기상청 날씨정보입니다!\n\n' + weatherData,
               thumbnail: {
                 imageUrl: 'https://i.postimg.cc/W4Yj6M3J/weather.png'
               }
             }
-          },
-          // {
-          //   simpleText: {
-          //     text: '🌈 기상청 날씨정보입니다!'
-          //   }
-          // },
-          // {
-          //   simpleText: {
-          //     text: weatherData
-          //   }
-          // }
+          }
         ],
         quickReplies: [
           {
