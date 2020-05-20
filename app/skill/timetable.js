@@ -36,6 +36,11 @@ module.exports = app => {
         ],
         quickReplies: [
           {
+            label: '급식 확인',
+            action: 'message',
+            messageText: '당밥아 급식 알려줘'
+          },
+          {
             label: '메뉴 보기',
             action: 'message',
             messageText: '메뉴 보기'
