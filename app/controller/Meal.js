@@ -29,7 +29,7 @@ Meal.update = async function () {
     // 오늘 급식
     data.push({
       date: `${month}월 ${day}일 ${this._week[weekDay]}요일`,
-      info: mealInfo[day],
+      info: mealInfo[day].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
       type: 'today'
     })
 
@@ -37,7 +37,7 @@ Meal.update = async function () {
     if (tomorrow <= lastDay) {
       data.push({
         date: `${month}월 ${tomorrow}일 ${this._week[weekDay + 1 > 6 ? 6 - weekDay : weekDay + 1]}요일`,
-        info: mealInfo[tomorrow],
+        info: mealInfo[tomorrow].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
         type: 'tomorrow'
       })
     }
