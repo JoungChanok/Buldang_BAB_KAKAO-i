@@ -29,17 +29,7 @@ module.exports = app => {
                 imageUrl: 'https://i.postimg.cc/sgjNf0rc/meal.png'
               }
             }
-          },
-          // {
-          //   simpleText: {
-          //     text: typeString
-          //   }
-          // },
-          // {
-          //   simpleText: {
-          //     text: mealData
-          //   }
-          // }
+          }
         ],
         quickReplies: [
           {
