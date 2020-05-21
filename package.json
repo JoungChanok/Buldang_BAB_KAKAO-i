@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node main",
     "test": "standard && node my-tests.js",
-    "fix": "standard --fix"
+    "fix": "standard --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -41,7 +43,8 @@
     "passport-local": "^1.0.0",
     "public-ip": "^4.0.1",
     "request": "^2.88.2",
-    "sequelize": "^5.21.10"
+    "sequelize": "^5.21.10",
+    "snyk": "^1.323.2"
   },
   "devDependencies": {
     "standard": "^14.3.4"
@@ -51,5 +54,6 @@
       "/admin",
       "/public"
     ]
-  }
+  },
+  "snyk": true
 }
