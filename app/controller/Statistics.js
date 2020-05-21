@@ -62,12 +62,11 @@ Statistics.getData = async function () {
       data.push(stat['timetable'])
       data.push(stat['calendar'])
       data.push(stat['weather'])
-      data.push(stat['other'])
       return data
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return [1, 1, 1, 1, 1]
+    return [1, 1, 1, 1]
   }
 }
 
