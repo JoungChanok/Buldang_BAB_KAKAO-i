@@ -12,7 +12,7 @@ Weather._clock = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗'
 
 Weather.init = async function () {
   await WeatherModel.init()
-  console.log(timeStamp() + '날씨 예보 모델을 정의했어요.'.cyan)
+  console.log(timeStamp() + '날씨 데이터 모델을 정의합니다.'.cyan)
 }
 
 Weather.update = async function () {
@@ -43,7 +43,7 @@ Weather.update = async function () {
     })
   })
   await WeatherModel.update(result)
-  console.log(timeStamp() + '날씨 정보가 업데이트 되었어요.'.green)
+  console.log(timeStamp() + '날씨 데이터를 갱신합니다.'.green)
 }
 
 Weather.get = async function () {

@@ -8,7 +8,7 @@ Meal._week = ['일', '월', '화', '수', '목', '금', '토']
 Meal.init = async function (school) {
   this.school = school
   await MealModel.init()
-  console.log(timeStamp() + '급식 정보 모델을 정의했어요.'.cyan)
+  console.log(timeStamp() + '급식 데이터 모델을 정의합니다.'.cyan)
 }
 
 Meal.update = async function () {
@@ -43,7 +43,7 @@ Meal.update = async function () {
     }
 
     await MealModel.update(data)
-    console.log(timeStamp() + '급식 정보가 업데이트 되었어요.'.green)
+    console.log(timeStamp() + '급식 데이터를 갱신합니다.'.green)
   } catch (e) {
     console.log(timeStamp() + e.message.red)
   }
@@ -58,7 +58,7 @@ Meal.get = async function (type) {
     return '😥급식 정보가 없어요😥'
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪급식 정보를 불러오는 중 문제가 발생했어요🤪'
+    return '🤪급식 데이터를 갱신하는 중 문제가 발생했어요🤪'
   }
 }
 

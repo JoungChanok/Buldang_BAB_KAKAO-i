@@ -15,7 +15,7 @@ Timetable._numberEmoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣',
 Timetable.init = async function (schoolKeyword) {
   this._school = schoolKeyword
   await TimetableModel.init()
-  console.log(timeStamp() + '시간표 모델을 정의했어요.'.cyan)
+  console.log(timeStamp() + '학급 시간표 데이터 모델을 정의합니다.'.cyan)
 
   await comcigan.init()
   await comcigan.setSchool(schoolKeyword)
@@ -36,7 +36,7 @@ Timetable.update = async function () {
     })
 
     await TimetableModel.update(insertData)
-    console.log(timeStamp() + '시간표가 업데이트 되었어요.'.green)
+    console.log(timeStamp() + '학급 시간표 데이터를 갱신합니다.'.green)
   } catch (e) {
     console.log(e)
     console.log(timeStamp() + e.message.red)
@@ -58,7 +58,7 @@ Timetable.get = async function (grade, classNum, weekday) {
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '시간표 데이터를 불러오는 중 문제가 발생했어요.'
+    return '학급 시간표 데이터를 갱신하는 중 문제가 발생했어요.'
   }
 }
 

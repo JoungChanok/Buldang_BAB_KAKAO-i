@@ -12,12 +12,12 @@ Statistics.type = {
 
 Statistics.init = async function () {
   await StatisticsModel.init()
-  console.log(timeStamp() + '통계 모델이 정의됬어요.'.cyan)
+  console.log(timeStamp() + '사용자 통계 데이터 모델을 정의합니다.'.cyan)
 }
 
 Statistics.reset = async function () {
   await StatisticsModel.reset()
-  console.log(timeStamp() + '통계 자료를 없앴습니다.'.yellow)
+  console.log(timeStamp() + '사용자 통계 데이터를 초기화 합니다.'.yellow)
 }
 
 Statistics.count = async function (type = 'OTHER') {
@@ -49,7 +49,7 @@ Statistics.get = async function () {
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪 통계 데이터를 불러오는 중 문제가 발생했습니다 🤪'
+    return '🤪 사용자 통계 데이터를 갱신하는 중 문제가 발생했습니다 🤪'
   }
 }
 
