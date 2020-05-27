@@ -64,11 +64,11 @@ Weather.get = async function () {
       })
       return resultString
     } else {
-      return '😥날씨 데이터가 없어요😥'
+      return '😥 날씨 데이터가 없습니다 😥'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪날씨 데이터를 불러오는 중 문제가 발생했어요🤪'
+    return '🤪 날씨 데이터를 불러오는 중 문제가 발생했습니다 🤪'
   }
 }
 

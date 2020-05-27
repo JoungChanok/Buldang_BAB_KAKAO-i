@@ -12,11 +12,11 @@ exports.init = () => {
   schedule.scheduleJob('1 0 0 * * * *', async () => {
     await Meal.update()
     await Calendar.update()
+    await Timetable.update()
   })
 
   // 매 시간마다 날씨데이터 갱신
   schedule.scheduleJob('0 0 * * * * *', async () => {
-    await Timetable.update()
     await Weather.update()
   })
 

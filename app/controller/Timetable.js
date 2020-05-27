@@ -54,11 +54,11 @@ Timetable.get = async function (grade, classNum, weekday) {
       }
       return timetableResult.replace(/\n$/, '')
     } else {
-      return '시간표 정보가 없는 것 같아요.'
+      return '🤪 시간표 정보가 없는 것 같습니다 🤪'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '학급 시간표 데이터를 갱신하는 중 문제가 발생했어요.'
+    return '🤪 학급 시간표 데이터를 갱신하는 중 문제가 발생했습니다 🤪'
   }
 }
 

@@ -29,11 +29,11 @@ Calendar.get = async function () {
       }
       return resultString.replace(/\n$/, '')
     } else {
-      return resultString + '😥학사일정 정보가 없어요😥'
+      return resultString + '😥 학사일정 정보가 없습니다 😥'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪이번달 일정 데이터를 불러오는 중 문제가 발생했어요🤪'
+    return '🤪 이번달 일정 데이터를 불러오는 중 문제가 발생했습니다 🤪'
   }
 }
 
