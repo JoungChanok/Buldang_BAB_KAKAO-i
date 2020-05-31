@@ -7,7 +7,7 @@ const WeatherModel = require('../model/Weather')
 var Weather = {}
 
 Weather._url = 'http://www.weather.go.kr/wid/queryDFSRSS.jsp?zone=4413356500'
-Weather._pty = ['❌ 없음', '🌧️ 비', '🌨️ 비와 눈', '❄️ 눈']
+Weather._pty = ['❌', '🌧️ 비', '🌨️ 비와 눈', '❄️ 눈']
 Weather._clock = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛']
 
 Weather.init = async function () {
@@ -62,7 +62,7 @@ Weather.get = async function () {
                         `🤔 강수확률: ${row.pop}%, ${row.wfKor}\n` +
                         `💧 습도: ${row.reh}%\n\n`
       })
-      return resultString
+      return resultString + pub + ' 발표\n불당동 날씨 기준'
     } else {
       return '😥 날씨 데이터가 없습니다 😥'
     }
