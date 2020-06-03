@@ -14,11 +14,6 @@ module.exports = app => {
       template: {
         outputs: [
           {
-            simpleImage: {
-                imageUrl: "https://i.postimg.cc/W4Yj6M3J/weather.png",
-            }
-          },
-          {
             basicCard: {
               description: '🌈 기상청 날씨정보입니다!\n\n' + weatherData
             }

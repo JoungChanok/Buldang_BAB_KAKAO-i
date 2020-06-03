@@ -15,10 +15,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: '📅 이번 달 학사일정입니다!\n\n' + calendarData,
-              thumbnail: {
-                imageUrl: 'https://i.postimg.cc/Bvn4Khq0/Calendar.png'
-              }
+              description: '📅 이번 달 학사일정입니다!\n\n' + calendarData
             }
           }
         ],

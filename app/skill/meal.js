@@ -24,10 +24,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: typeString + mealData,
-              thumbnail: {
-                imageUrl: 'https://i.postimg.cc/sgjNf0rc/meal.png'
-              }
+              description: typeString + mealData
             }
           }
         ],

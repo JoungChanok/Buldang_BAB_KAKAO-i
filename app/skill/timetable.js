@@ -27,10 +27,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: timetableData,
-              thumbnail: {
-                imageUrl: 'https://i.postimg.cc/Y0YHHZx1/timetable.png'
-              }
+              description: timetableData
             }
           }
         ],
