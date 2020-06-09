@@ -55,7 +55,7 @@ Meal.get = async function (type) {
     if (row && row.date && row.info) {
       return row.date + '\n\n' + row.info
     }
-    return '😥 급식 정보가 없습니다 😥'
+    return '😥 나이스에서 급식정보를 받아오지 못했습니다 😥'
   } catch (e) {
     console.log(timeStamp() + e.message.red)
     return '🤪 급식 데이터를 갱신하는 중 문제가 발생했습니다 🤪'
