@@ -8,7 +8,7 @@ Meal._week = ['일', '월', '화', '수', '목', '금', '토']
 Meal.init = async function (school) {
   this.school = school
   await MealModel.init()
-  console.log(timeStamp() + '급식 정보 모델을 정의했어요.'.cyan)
+  console.log(timeStamp() + '급식 데이터 모델을 정의합니다.'.cyan)
 }
 
 Meal.update = async function () {
@@ -29,7 +29,7 @@ Meal.update = async function () {
     // 오늘 급식
     data.push({
       date: `${month}월 ${day}일 ${this._week[weekDay]}요일`,
-      info: mealInfo[day],
+      info: mealInfo[day].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
       type: 'today'
     })
 
@@ -37,13 +37,13 @@ Meal.update = async function () {
     if (tomorrow <= lastDay) {
       data.push({
         date: `${month}월 ${tomorrow}일 ${this._week[weekDay + 1 > 6 ? 6 - weekDay : weekDay + 1]}요일`,
-        info: mealInfo[tomorrow],
+        info: mealInfo[tomorrow].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
         type: 'tomorrow'
       })
     }
 
     await MealModel.update(data)
-    console.log(timeStamp() + '급식 정보가 업데이트 되었어요.'.green)
+    console.log(timeStamp() + '급식 데이터를 갱신합니다.'.green)
   } catch (e) {
     console.log(timeStamp() + e.message.red)
   }
@@ -55,10 +55,10 @@ Meal.get = async function (type) {
     if (row && row.date && row.info) {
       return row.date + '\n\n' + row.info
     }
-    return '😥급식 정보가 없어요😥'
+    return '😥 급식 정보가 없습니다 😥'
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return '🤪급식 정보를 불러오는 중 문제가 발생했어요🤪'
+    return '🤪 급식 데이터를 갱신하는 중 문제가 발생했습니다 🤪'
   }
 }
 

@@ -1,23 +1,20 @@
 const config = require('config')
+const statistics = require('../controller/Statistics')
 const controller = require('../controller/Statistics')
 
 const routerName = config.get('proxy') + '/statistics'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
+    await statistics.count('STATISTICS')
     const statData = await controller.get()
     res.json({
       version: '2.0',
       template: {
         outputs: [
           {
-            simpleText: {
-              text: '여러분들이 사용한 메뉴의 사용량 통계입니다! 😃'
-            }
-          },
-          {
-            simpleText: {
-              text: statData
+            basicCard: {
+              description:'오늘 하루 여러분들이 사용하신 메뉴입니다 🤗\n\n' + statData
             }
           }
         ],

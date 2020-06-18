@@ -1,0 +1,17 @@
+{
+  "port": 10000,
+  "schoolCode": "학교코드",
+  "api_key": "공백으로 두세요",
+  "proxy": "/",
+  "admin": {
+    "id": "관리자 페이지 아이디",
+    "password": "관리자 페이지 패스워드"
+  },
+  "database": {
+    "db": "데이터 베이스 이름",
+    "user": "root",
+    "password": "데이터 베이스 패스워드",
+    "host": "localhost",
+    "port": 3306
+  }
+}

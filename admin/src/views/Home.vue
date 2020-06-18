@@ -6,11 +6,8 @@
       </div>
     </transition>
     <div class="panel col-pc-2 col-mb-1">
-      <h3>Menu usage</h3>
+      <h3>메뉴 사용량</h3>
       <canvas id="chart"></canvas>
-      <div class="button-area">
-        <button>Update</button>
-      </div>
     </div>
   </div>
 </template>
@@ -59,7 +56,7 @@ export default {
           }
           resolve()
         }).catch(e => {
-          this.chartData = [1, 1, 1, 1, 1]
+          this.chartData = [1, 1, 1, 1]
           reject(e)
         })
       })
@@ -69,7 +66,7 @@ export default {
       this.chart = new Chart(ctx, {
         type: 'pie',
         data: {
-          labels: ['Meal', 'Timetable', 'Calendar', 'Weather', 'Other'],
+          labels: ['급식', '시간표', '학사일정', '날씨 예보'],
           datasets: [{
             label: '# of Usage',
             data: this.chartData,
@@ -77,15 +74,13 @@ export default {
               'rgba(255, 99, 132, 0.5)',
               'rgba(54, 162, 235, 0.5)',
               'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(255, 159, 64, 0.5)'
+              'rgba(75, 192, 192, 0.5)'
             ],
             borderColor: [
               'rgba(255,99,132,1)',
               'rgba(54, 162, 235, 1)',
               'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(255, 159, 64, 1)'
+              'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
           }]

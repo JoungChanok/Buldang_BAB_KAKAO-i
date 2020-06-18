@@ -10,7 +10,7 @@ Admin.init = async () => {
   const password = config.get('admin.password')
   await AdminModel.init(id, password)
   console.log(timeStamp() + '관리 모델 정의'.cyan)
-  console.log(timeStamp() + '초기 관리자 계정 생성중이에요 '.cyan + `${id}/${password}`.blue)
+  console.log(timeStamp() + '관리자 계정 생성중이에요 '.cyan + `${id}/${password}`.blue)
 }
 
 Admin.auth = async (user) => {
@@ -25,7 +25,7 @@ Admin.auth = async (user) => {
 Admin.create = async (user) => {
   try {
     await AdminModel.create(user)
-    console.log(timeStamp() + '새 관리자 계정이 생성됐어요.'.yellow)
+    console.log(timeStamp() + '관리자 계정이 생성됐어요.'.yellow)
   } catch (e) {
     console.log(timeStamp() + e.message.red)
   }

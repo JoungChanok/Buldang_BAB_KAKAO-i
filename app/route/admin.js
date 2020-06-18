@@ -29,5 +29,5 @@ module.exports = app => {
     res.json(await Statistics.getData())
   })
 
-  console.log(timeStamp() + '관리자 센터가 초기화됬어요'.cyan)
+  console.log(timeStamp() + '관리자 센터를 초기화 합니다.'.cyan)
 }

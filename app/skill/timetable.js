@@ -1,10 +1,12 @@
 const config = require('config')
+const statistics = require('../controller/Statistics')
 const controller = require('../controller/Timetable')
 
 const routerName = config.get('proxy') + '/timetable'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
+    await statistics.count('TIMETABLE')
     const params = req.body.action['params'] || {}
     const date = JSON.parse(params['sys_date'] || '{}')
     const dateString = date['date']
@@ -24,12 +26,17 @@ module.exports = app => {
       template: {
         outputs: [
           {
-            simpleText: {
-              text: timetableData
+            basicCard: {
+              description: timetableData
             }
           }
         ],
         quickReplies: [
+          {
+            label: '급식 확인',
+            action: 'message',
+            messageText: '당밥아 급식 알려줘'
+          },
           {
             label: '메뉴 보기',
             action: 'message',
