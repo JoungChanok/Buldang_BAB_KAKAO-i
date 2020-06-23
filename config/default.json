@@ -8,10 +8,10 @@
     "password": "joung0406"
   },
   "database": {
-    "db": "gmhzwo8xww6m5bft",
-    "user": "asb6u0v42rmik9mj",
-    "password": "gr2mvjgze0vs6vv2",
-    "host": "u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "db": "ummmr5ta6k3syoig",
+    "user": "lfd106azqcaaao9u",
+    "password": "dppgdc2y3cnpj9aq",
+    "host": "nnmeqdrilkem9ked.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306
   }
 }
