@@ -1,7 +1,6 @@
 const schedule = require('node-schedule')
 
 const Meal = require('../controller/Meal')
-const Timetable = require('../controller/Timetable')
 const Calendar = require('../controller/Calendar')
 const Weather = require('../controller/Weather')
 
@@ -12,7 +11,6 @@ exports.init = () => {
   schedule.scheduleJob('1 0 0 * * * *', async () => {
     await Meal.update()
     await Calendar.update()
-    await Timetable.update()
   })
 
   // 매 시간마다 날씨데이터 갱신
