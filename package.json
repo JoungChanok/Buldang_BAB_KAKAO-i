@@ -43,8 +43,8 @@
     "passport-local": "^1.0.0",
     "public-ip": "^4.0.1",
     "request": "^2.88.2",
-    "sequelize": "^5.22.2",
-    "snyk": "^1.352.1"
+    "sequelize": "^5.22.3",
+    "snyk": "^1.348.1"
   },
   "devDependencies": {
     "standard": "^14.3.4"
