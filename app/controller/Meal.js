@@ -28,16 +28,16 @@ Meal.update = async function () {
 
     // 오늘 급식
     data.push({
-      date: `${month}월 ${day}일 ${this._week[weekDay]}요일`,
-      info: mealInfo[day].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
+      date: `${month}월 ${day}일 ${this._week[weekDay]}요일`.replace('수요일','수요일 [잔반없는날]'),
+      info: mealInfo[day].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,'').replace('[석식]','\n[석식]'),
       type: 'today'
     })
 
     // 내일 급식 (이번 달 마지막 날짜 이하인 경우)
     if (tomorrow <= lastDay) {
       data.push({
-        date: `${month}월 ${tomorrow}일 ${this._week[weekDay + 1 > 6 ? 6 - weekDay : weekDay + 1]}요일`,
-        info: mealInfo[tomorrow].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,''), // replace
+        date: `${month}월 ${tomorrow}일 ${this._week[weekDay + 1 > 6 ? 6 - weekDay : weekDay + 1]}요일`.replace('수요일','수요일 [잔반없는날]'),
+        info: mealInfo[tomorrow].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,'').replace('[석식]','\n[석식]'),
         type: 'tomorrow'
       })
     }
