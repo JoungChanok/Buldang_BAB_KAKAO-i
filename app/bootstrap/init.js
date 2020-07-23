@@ -7,12 +7,12 @@ const passport = require('passport')
 const admin = require('../controller/Admin')
 const meal = require('../controller/Meal')
 const statistics = require('../controller/Statistics')
-// const timetable = require('../controller/Timetable')
+const timetable = require('../controller/Timetable')
 const calendar = require('../controller/Calendar')
 const weather = require('../controller/Weather')
 
 const mealSkill = require('../skill/meal')
-// const timetableSkill = require('../skill/timetable')
+const timetableSkill = require('../skill/timetable')
 const calendarSkill = require('../skill/calendar')
 const statSkill = require('../skill/statistics')
 const weatherSkill = require('../skill/weather')
@@ -40,7 +40,7 @@ module.exports = async (app, express) => {
   await weather.init()
 
   await meal.update()
-  // await timetable.update()
+  await timetable.update()
   await calendar.update()
   await weather.update()
 
@@ -63,7 +63,7 @@ module.exports = async (app, express) => {
   // Openbuilder 스킬 라우팅 등록
   mealSkill(app)
   statSkill(app)
-  // timetableSkill(app)
+  timetableSkill(app)
   calendarSkill(app)
   weatherSkill(app)
   require('../route/admin')(app)

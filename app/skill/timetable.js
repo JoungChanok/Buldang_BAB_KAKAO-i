@@ -27,7 +27,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: '죄송합니다. 현재 시간표 담당 선생님께서 시간표를 올려주시지 않아 확인을 할 수 없습니다 😥'
+              description: timetableData
             }
           }
         ],
