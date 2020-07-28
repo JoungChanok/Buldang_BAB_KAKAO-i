@@ -7,11 +7,11 @@ const Statistics = sequelize.define('Statistics', {
     allowNull: false,
     defaultValue: 0
   },
-  timetable: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0
-  },
+  // timetable: {
+  //   type: Sequelize.INTEGER, 지원 종료
+  //   allowNull: false,
+  //   defaultValue: 0
+  // },
   calendar: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -30,7 +30,7 @@ exports.init = async () => {
   await Statistics.sync({ force: true })
   await Statistics.create({
     meal: 0,
-    timetable: 0,
+    // timetable: 0, 지원 종료
     calendar: 0,
     weather: 0
   })
@@ -43,7 +43,7 @@ exports.reset = async () => {
   })
   await Statistics.create({
     meal: 0,
-    timetable: 0,
+    // timetable: 0, 지원 종료
     calendar: 0,
     weather: 0
   })

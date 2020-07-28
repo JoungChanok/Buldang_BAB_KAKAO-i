@@ -5,7 +5,7 @@ var Statistics = {}
 
 Statistics.type = {
   MEAL: 'meal',
-  TIMETABLE: 'timetable',
+  // TIMETABLE: 'timetable', 지원 종료
   CALENDAR: 'calendar',
   WEATHER: 'weather'
 }
@@ -35,12 +35,12 @@ Statistics.get = async function () {
     const stat = await StatisticsModel.get()
     if (stat) {
       const total = stat['meal'] +
-                    stat['timetable'] +
+                    // stat['timetable'] + 지원 종료
                     stat['calendar'] +
                     stat['weather']
 
       return `🍚 급식: ${(stat['meal'] / total * 100).toFixed(2)}%\n\n` +
-             `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n\n` +
+            //  `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n\n` + 지원 종료
              `📅 학사일정: ${(stat['calendar'] / total * 100).toFixed(2)}%\n\n` +
              `⛅ 날씨: ${(stat['weather'] / total * 100).toFixed(2)}%\n\n` +
              `✔️ 전체 기능 요청 수: ${total}회`
@@ -59,14 +59,14 @@ Statistics.getData = async function () {
     if (stat) {
       const data = []
       data.push(stat['meal'])
-      data.push(stat['timetable'])
+      // data.push(stat['timetable']) 지원 종료
       data.push(stat['calendar'])
       data.push(stat['weather'])
       return data
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return [1, 1, 1, 1]
+    return [1, 1, 1]
   }
 }
 
