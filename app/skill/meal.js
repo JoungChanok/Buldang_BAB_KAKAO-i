@@ -30,11 +30,6 @@ module.exports = app => {
         ],
         quickReplies: [
           {
-            label: '시간표좀 알려줄래?',
-            action: 'message',
-            messageText: '시간표좀 알려줘'
-          },
-          {
             label: '메뉴 보기',
             action: 'message',
             messageText: '메뉴 보기'
