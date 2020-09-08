@@ -44,7 +44,7 @@
     "public-ip": "^4.0.2",
     "request": "^2.88.2",
     "sequelize": "^5.22.3",
-    "snyk": "^1.374.0"
+    "snyk": "^1.377.1"
   },
   "devDependencies": {
     "standard": "^14.3.4"
