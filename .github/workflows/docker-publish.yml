@@ -16,10 +16,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: Dockerfile
           snapshot: true
-          - name: Discord notification
-          env:
-            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          uses: Ilshidur/action-discord@master
-          with:
-            args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'
-  
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'  
