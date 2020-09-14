@@ -16,15 +16,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: Dockerfile
           tag_names: true
-      # - name: Discord notification
-      #   env:
-      #   DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      #   uses: Ilshidur/action-discord@master
-      #   with:
-      #     args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'
-      - name: Discord Commits
-        uses: Sniddl/discord-commits@v1.2
+      - name: Discord notification
+        env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
-          embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://avatars.io/gravatar/{{ commit.author.email }}"} }'
+          args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'
