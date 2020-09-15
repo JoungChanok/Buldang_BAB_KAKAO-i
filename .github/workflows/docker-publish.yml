@@ -21,4 +21,11 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'  
+          args: '{{ EVENT_PAYLOAD.repository.full_name }} 프로젝트가 배포되었습니다.'
+      - name: send custom message
+        uses: appleboy/facebook-action@master
+        with:
+          fb_page_token: ${{ secrets.FB_PAGE_TOKEN }}
+          fb_verify_token: ${{ secrets.FB_VERIFY_TOKEN }}
+          to: ${{ secrets.FB_TO }}
+          args: The ${{ github.event_name }} event triggered first step.
