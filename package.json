@@ -45,7 +45,7 @@
     "request": "^2.88.2",
     "school-kr": "^3.1.1",
     "sequelize": "^5.22.3",
-    "snyk": "^1.399.1"
+    "snyk": "^1.401.0"
   },
   "devDependencies": {
     "standard": "^14.3.4"
