@@ -25,11 +25,7 @@ module.exports = app => {
           {
             basicCard: {
               description: typeString + mealData
-            },
-          },
-          {
-            type: "plugin.share",
-            label: "공유하기🔗"
+            }
           }
         ],
         quickReplies: [
