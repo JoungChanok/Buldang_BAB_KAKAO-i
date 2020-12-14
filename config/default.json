@@ -4,14 +4,14 @@
   "api_key": "",
   "proxy": "/bdhigh/api",
   "admin": {
-    "id": "chanok0406",
-    "password": "joung0406"
+    "id": "chanok9417",
+    "password": "asad242!"
   },
   "database": {
-    "db": "heroku_0dbec3976bd729e",
-    "user": "b4175f55df640b",
-    "password": "2247baa2",
-    "host": "us-cdbr-east-02.cleardb.com",
+    "db": "bdbab",
+    "user": "chanok9417",
+    "password": "asad242!",
+    "host": "localhost",
     "port": 3306
   }
 }

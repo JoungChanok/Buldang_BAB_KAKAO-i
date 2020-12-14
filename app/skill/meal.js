@@ -24,7 +24,13 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: typeString + mealData
+              description: typeString + mealData,
+              buttons: [
+                {
+                  action: 'share',
+                  label: '🔗공유하기'
+                }
+              ]
             }
           }
         ],
