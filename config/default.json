@@ -9,9 +9,9 @@
   },
   "database": {
     "db": "bdbab",
-    "user": "chanok9417",
+    "user": "admin",
     "password": "asad242!",
-    "host": "localhost",
+    "host": "bdbab.cmf2draufhzt.ap-northeast-2.rds.amazonaws.com",
     "port": 3306
   }
 }
