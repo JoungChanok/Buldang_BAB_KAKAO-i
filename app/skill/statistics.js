@@ -14,7 +14,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description:'오늘 하루 여러분들이 사용하신 메뉴입니다 🤗\n\n' + statData
+              description:'챗봇 사용량 입니다 🤗\n\n' + statData
             }
           }
         ],
