@@ -20,7 +20,12 @@ const Statistics = sequelize.define('Statistics', {
   weather: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: 0
+    defaultValue: 0,
+  },
+  briefing: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
   }
 }, {
   freezeTableName: true
@@ -32,7 +37,8 @@ exports.init = async () => {
     meal: 0,
     // timetable: 0, 지원 종료
     calendar: 0,
-    weather: 0
+    weather: 0,
+    briefing: 0
   })
 }
 
@@ -45,7 +51,8 @@ exports.reset = async () => {
     meal: 0,
     // timetable: 0, 지원 종료
     calendar: 0,
-    weather: 0
+    weather: 0,
+    briefing: 0
   })
 }
 

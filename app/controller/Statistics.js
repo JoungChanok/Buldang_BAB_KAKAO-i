@@ -7,7 +7,8 @@ Statistics.type = {
   MEAL: 'meal',
   // TIMETABLE: 'timetable', 지원 종료
   CALENDAR: 'calendar',
-  WEATHER: 'weather'
+  WEATHER: 'weather',
+  BRIEFING: 'briefing'
 }
 
 Statistics.init = async function () {
@@ -37,12 +38,14 @@ Statistics.get = async function () {
       const total = stat['meal'] +
                     // stat['timetable'] + 지원 종료
                     stat['calendar'] +
-                    stat['weather']
+                    stat['weather'] +
+                    stat['briefing']
 
       return `🍚 급식: ${(stat['meal'] / total * 100).toFixed(2)}%\n\n` +
             //  `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n\n` + 지원 종료
              `📅 학사일정: ${(stat['calendar'] / total * 100).toFixed(2)}%\n\n` +
              `⛅ 날씨: ${(stat['weather'] / total * 100).toFixed(2)}%\n\n` +
+             `⛅ 브리핑: ${(stat['briefing'] / total * 100).toFixed(2)}%\n\n`
              `✔️ 전체 기능 요청 수: ${total}회`
     } else {
       return '🤪 통계 데이터가 없습니다 🤪'
@@ -62,11 +65,12 @@ Statistics.getData = async function () {
       // data.push(stat['timetable']) 지원 종료
       data.push(stat['calendar'])
       data.push(stat['weather'])
+      data.push(stat['briefing'])
       return data
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return [1, 1, 1]
+    return [1, 1, 1, 1]
   }
 }
 

@@ -16,6 +16,7 @@ const mealSkill = require('../skill/meal')
 const calendarSkill = require('../skill/calendar')
 const statSkill = require('../skill/statistics')
 const weatherSkill = require('../skill/weather')
+const briefingSkill = require('../skill/briefing')
 
 const { timeStamp } = require('../common/util')
 const school = require('./school').school
@@ -66,6 +67,7 @@ module.exports = async (app, express) => {
   // timetableSkill(app) 지원 종료
   calendarSkill(app)
   weatherSkill(app)
+  briefingSkill(app)
   require('../route/admin')(app)
 
   console.log(timeStamp() + '초기화를 끝냈어요!' + (new Date() - startTime + 'ms').yellow)

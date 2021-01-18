@@ -56,7 +56,7 @@ export default {
           }
           resolve()
         }).catch(e => {
-          this.chartData = [1, 1, 1]
+          this.chartData = [1, 1, 1, 1]
           reject(e)
         })
       })
@@ -66,7 +66,7 @@ export default {
       this.chart = new Chart(ctx, {
         type: 'pie',
         data: {
-          labels: ['급식', '학사일정', '날씨 예보'],
+          labels: ['급식', '학사일정', '날씨 예보', '브리핑'],
           datasets: [{
             label: '# of Usage',
             data: this.chartData,
@@ -74,13 +74,15 @@ export default {
               'rgba(255, 99, 132, 0.5)',
               // 'rgba(54, 162, 235, 0.5)', 시간표 지원 종료
               'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)'
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)'
             ],
             borderColor: [
               'rgba(255,99,132,1)',
               // 'rgba(54, 162, 235, 1)', 시간표 지원 종료
               'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)'
+              'rgba(75, 192, 192, 1)',
+              'rgba(54, 162, 235, 0.5)'
             ],
             borderWidth: 1
           }]
