@@ -33,5 +33,5 @@ node main.js
 ## 정보
 - 천안불당고등학교의 정보를 쉽게 확인할 수 있도록 도와주는 서비스입니다.
 - 서버: Node.js + MariaDB
-- 개발자: 정찬옥(참고 및 도와주신분: leegeunhyeok)
+- 개발자: 정찬옥(참고 및 도와주신분: leegeunhyeok, HEY_CJAEWON)
 - 문의사항: chanok9417@kakao.com
