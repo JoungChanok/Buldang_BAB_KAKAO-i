@@ -6,41 +6,17 @@ const Meal = sequelize.define('Meal', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  info: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  type: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+  meal: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  }, 
 }, {
   freezeTableName: true
 })
 
-exports.init = () => {
-  return Meal.sync({ force: true })
-}
-
-exports.get = type => {
-  return Meal.findOne({
-    where: {
-      type: type
-    }
-  })
-}
-
-exports.update = async (mealInfos) => {
-  await Meal.destroy({
-    where: {},
-    truncate: true
-  })
-
-  mealInfos.forEach(async meal => {
-    await Meal.create({
-      date: meal.date,
-      info: meal.info,
-      type: meal.type
-    })
-  })
-}
+module.exports = {
+  Meal,
+  init: () => {
+    return Meal.sync({ force: true });
+  },
+};

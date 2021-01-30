@@ -2,10 +2,11 @@ const config = require('config')
 const statistics = require('../controller/Statistics')
 const controller = require('../controller/Meal')
 
-const routerName = config.get('proxy') + '/meal'
+const mealRouterName = config.get('proxy') + '/meal'
+const mealWeekRouterName = config.get('proxy') + '/meal/week';
 
 module.exports = app => {
-  app.post(routerName, async (req, res) => {
+  app.post(mealRouterName, async (req, res) => {
     await statistics.count('MEAL')
     const params = req.body.action['params'] || {}
     const type = JSON.parse(params['sys_date'] || '{}')
@@ -43,5 +44,42 @@ module.exports = app => {
         ]
       }
     })
-  })
+  });
+
+  app.post(mealWeekRouterName, async (req, res) => {
+    const mealWeekData = await controller.getWeek();
+
+    const items = mealWeekData.map(data => {
+      return {
+        description: data.date + '\n\n' + data.meal,
+        buttons: [
+          {
+            action: 'share',
+            label: '🔗공유하기'
+          }
+        ]
+      };
+    }); 
+
+    res.json({
+      version: '2.0',
+      template: {
+        outputs: [
+          {
+            carousel: {
+              type: 'basicCard',
+              items,
+            }
+          }
+        ],
+        quickReplies: [
+          {
+            label: '메뉴 보기',
+            action: 'message',
+            messageText: '메뉴 보기'
+          }
+        ]
+      }
+    });
+  });
 }
