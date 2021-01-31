@@ -14,7 +14,7 @@ Meal.init = async function (school) {
 Meal.update = async function () {
   try {
     const mealInfo = await this.school.getMeal({
-      default: '급식 정보가 없습니다', 
+      default: '😥 급식 정보가 없습니다 😥', 
     }); 
     const date = new Date() 
 
@@ -45,17 +45,13 @@ Meal.get = async function (type) {
     tomorrow.setDate(today.getDate() + 1);
 
     if (type === 'today') {
-      if (meal[String(today.getDate())] === '급식 정보가 없습니다') {
-        return '😥 급식 정보가 없습니다 😥'; 
-      }
+      if (meal[String(today.getDate())] === '😥 급식 정보가 없습니다 😥')
       return `${today.getMonth() + 1}월 ${today.getDate()}일 ${this._week[today.getDay()]}요일`.replace('수요일','수요일 [잔반없는날]') 
         + '\n\n' + meal[String(today.getDate())].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,'').replace('[석식]','\n[석식]');
     } else if (type === 'tomorrow') { 
       if (tomorrow.getMonth() != today.getMonth()) 
         return '🤮 내일 급식은 내일 확인이 가능해요';
-      if (meal[String(tomorrow.getDate())] === '급식 정보가 없습니다') { 
-        return '😥 급식 정보가 없습니다 😥';  
-      }
+      if (meal[String(tomorrow.getDate())] === '😥 급식 정보가 없습니다 😥')
       return `${tomorrow.getMonth() +1 }월 ${tomorrow.getDate()}일 ${this._week[tomorrow.getDay()]}요일`.replace('수요일','수요일 [잔반없는날]') 
         + '\n\n' + meal[String(tomorrow.getDate())].replace(/[,]/g,', ').replace(/[.]/g,'').replace(/[0-9]/g,'').replace('[석식]','\n[석식]');
       }

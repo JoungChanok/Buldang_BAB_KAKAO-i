@@ -11,7 +11,8 @@ const Meal = sequelize.define('Meal', {
     allowNull: false,
   }, 
 }, {
-  freezeTableName: true
+  freezeTableName: true,
+  charset: 'utf8mb4'
 })
 
 module.exports = {
