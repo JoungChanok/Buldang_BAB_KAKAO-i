@@ -4,7 +4,7 @@
   "description": "BULDANG High School kakao i openbuilder chatbot",
   "main": "main.js",
   "scripts": {
-    "start": "node main",
+    "start": "nodemon main",
     "test": "standard && node my-tests.js",
     "fix": "standard --fix",
     "snyk-protect": "snyk protect",

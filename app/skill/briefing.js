@@ -12,13 +12,13 @@ module.exports = app => {
     const calendarData = await calcontroller.get()
     const weatherData = await weathercontroller.get()
     const params = req.body.action['params'] || {}
-    const type = JSON.parse(params['sys_date'] || '{}')
+    const type = JSON.parse(params['sys_date'] || '{ "dateTag": "today" }') 
     const mealData = await mealcontroller.get(type['dateTag'])
 
     let typeString = '🍚 오늘의 급식을 알려드릴게요!\n\n'
     if (type['dateTag'] === 'tomorrow') {
-      typeString = '🍱 내일의 급식을 알려드릴게요!\n\n'
-    } else if (type['dateTag'] === 'yesterday') {
+      typeString = '🍱 내일의 급식을 알려드릴게요!\n\n' 
+    } else if (type['dateTag'] === 'yesterday') { 
       typeString = '지난 급식 정보는 제공하지 않아요..😭\n\n'
     }
 
