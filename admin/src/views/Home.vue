@@ -28,37 +28,45 @@ export default {
     }
   },
   created () {
-    this.$http.post('/auth').then(r => {
-      if (!r.data.auth) {
+    this.$http
+      .post('/auth')
+      .then(r => {
+        if (!r.data.auth) {
+          this.$router.push({ name: 'login' })
+        }
+      })
+      .catch(e => {
+        // eslint-disable-next-line
+        console.error(e)
         this.$router.push({ name: 'login' })
-      }
-    }).catch(e => {
-      // eslint-disable-next-line
-      console.error(e)
-      this.$router.push({ name: 'login' })
-    })
+      })
   },
   mounted () {
-    this.updateChartData().catch(e => {
-      // eslint-disable-next-line
-      console.error(e)
-    }).finally(() => {
-      this.loading = false
-      this.drawChart()
-    })
+    this.updateChartData()
+      .catch(e => {
+        // eslint-disable-next-line
+        console.error(e)
+      })
+      .finally(() => {
+        this.loading = false
+        this.drawChart()
+      })
   },
   methods: {
     updateChartData () {
       return new Promise((resolve, reject) => {
-        this.$http.get('/chart').then(r => {
-          if (r.data) {
-            this.chartData = r.data
-          }
-          resolve()
-        }).catch(e => {
-          this.chartData = [1, 1, 1, 1, 1]
-          reject(e)
-        })
+        this.$http
+          .get('/chart')
+          .then(r => {
+            if (r.data) {
+              this.chartData = r.data
+            }
+            resolve()
+          })
+          .catch(e => {
+            this.chartData = [1, 1, 1, 1, 1]
+            reject(e)
+          })
       })
     },
     drawChart () {
@@ -67,27 +75,29 @@ export default {
         type: 'pie',
         data: {
           labels: ['급식', '학사일정', '날씨 예보', '브리핑', '기타'],
-          datasets: [{
-            label: '# of Usage',
-            data: this.chartData,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.5)',
-              // 'rgba(54, 162, 235, 0.5)', 시간표 지원 종료
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 159, 64, 0.5)'
-            ],
-            borderColor: [
-              'rgba(255,99,132,1)',
-              // 'rgba(54, 162, 235, 1)', 시간표 지원 종료
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-          }]
+          datasets: [
+            {
+              label: '# of Usage',
+              data: this.chartData,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                // 'rgba(54, 162, 235, 0.5)', 시간표 지원 종료
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
+              ],
+              borderColor: [
+                'rgba(255,99,132,1)',
+                // 'rgba(54, 162, 235, 1)', 시간표 지원 종료
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }
+          ]
         },
         responsive: true
       })
@@ -104,24 +114,27 @@ export default {
         content: message
       })
 
-      this.$http.post('/message', {
-        user_key: this.userKey,
-        content: message
-      }).then(result => {
-        // eslint-disable-next-line
-        console.log(result.data)
-        this.appendMessage({
-          type: 'bot',
-          content: result.data.message.text
+      this.$http
+        .post('/message', {
+          user_key: this.userKey,
+          content: message
         })
-      }).catch(e => {
-        // eslint-disable-next-line
-        console.error(e)
-        this.appendMessage({
-          type: 'bot',
-          content: e.message
+        .then(result => {
+          // eslint-disable-next-line
+          console.log(result.data)
+          this.appendMessage({
+            type: 'bot',
+            content: result.data.message.text
+          })
         })
-      })
+        .catch(e => {
+          // eslint-disable-next-line
+          console.error(e)
+          this.appendMessage({
+            type: 'bot',
+            content: e.message
+          })
+        })
     },
     appendMessage (messageData) {
       this.messageList.push(messageData)
@@ -134,7 +147,6 @@ export default {
 }
 </script>
 <style lang="scss">
-
 #loading {
   position: fixed;
   top: 0;
@@ -158,13 +170,13 @@ export default {
   0% {
     width: 0px;
     height: 0px;
-    opacity: 0.0;
+    opacity: 0;
   }
 
   100% {
     width: 60px;
     height: 60px;
-    opacity: 1.0;
+    opacity: 1;
   }
 }
 
@@ -188,13 +200,12 @@ export default {
   float: left;
 
   .input-area {
-
     input {
       background-color: rgba(0, 0, 0, 0.1);
       outline: none;
       border: none;
       border-radius: 20px;
-      transition: .2s;
+      transition: 0.2s;
       padding: 10px 20px;
       margin-top: 10px;
       text-align: center;
@@ -217,7 +228,7 @@ export default {
       color: #fff;
       font-size: 1.1rem;
       margin-top: 16px;
-      transition: .2s;
+      transition: 0.2s;
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);

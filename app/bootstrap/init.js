@@ -70,5 +70,7 @@ module.exports = async (app, express) => {
   briefingSkill(app)
   require('../route/admin')(app)
 
-  console.log(timeStamp() + '초기화를 끝냈어요!' + (new Date() - startTime + 'ms').yellow)
+  console.log(
+    timeStamp() + '초기화를 끝냈어요!' + (new Date() - startTime + 'ms').yellow
+  )
 }

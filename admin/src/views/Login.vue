@@ -1,15 +1,27 @@
 <template>
   <div id="login">
     <div id="user-profile">
-      <img src="@/assets/user.png">
+      <img src="@/assets/user.png" />
       <div id="message">{{ message }}</div>
     </div>
     <form @submit.prevent="login">
       <div class="input-area">
-        <input type="text" name="id" placeholder="Your ID" v-model="id" required>
+        <input
+          type="text"
+          name="id"
+          placeholder="Your ID"
+          v-model="id"
+          required
+        />
       </div>
       <div class="input-area">
-        <input type="password" name="password" placeholder="Password" v-model="password" required>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          v-model="password"
+          required
+        />
       </div>
       <div>
         <button class="button">Login</button>
@@ -30,29 +42,35 @@ export default {
     }
   },
   created () {
-    this.$http.post('/auth').then(r => {
-      if (r.data.auth) {
-        this.$router.push({ name: 'home' })
-      }
-    }).catch(e => {
-      // eslint-disable-next-line
-      console.error(e)
-    })
+    this.$http
+      .post('/auth')
+      .then(r => {
+        if (r.data.auth) {
+          this.$router.push({ name: 'home' })
+        }
+      })
+      .catch(e => {
+        // eslint-disable-next-line
+        console.error(e)
+      })
   },
   methods: {
     login () {
-      this.$http.post('/login', {
-        id: this.id,
-        password: this.password
-      }).then(r => {
-        if (r.data.login) {
-          this.$router.push({ name: 'home' })
-        } else {
-          this.setMessage('Check your ID or PASSWORD')
-        }
-      }).catch(e => {
-        this.setMessage(e.message)
-      })
+      this.$http
+        .post('/login', {
+          id: this.id,
+          password: this.password
+        })
+        .then(r => {
+          if (r.data.login) {
+            this.$router.push({ name: 'home' })
+          } else {
+            this.setMessage('Check your ID or PASSWORD')
+          }
+        })
+        .catch(e => {
+          this.setMessage(e.message)
+        })
     },
     setMessage (message) {
       const messageElement = document.getElementById('message')
@@ -84,7 +102,7 @@ export default {
     #message {
       font-size: 1.2rem;
       margin: 10px 0;
-      transition: .4s;
+      transition: 0.4s;
     }
   }
 }

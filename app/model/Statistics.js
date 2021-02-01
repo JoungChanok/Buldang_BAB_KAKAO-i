@@ -1,35 +1,39 @@
 const { Sequelize, sequelize } = require('../bootstrap/database')
 
 // Statistics 모델 정의
-const Statistics = sequelize.define('Statistics', {
-  meal: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0
+const Statistics = sequelize.define(
+  'Statistics',
+  {
+    meal: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    // timetable: {
+    //   type: Sequelize.INTEGER, 지원 종료
+    //   allowNull: false,
+    //   defaultValue: 0
+    // },
+    calendar: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    weather: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    briefing: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    }
   },
-  // timetable: {
-  //   type: Sequelize.INTEGER, 지원 종료
-  //   allowNull: false,
-  //   defaultValue: 0
-  // },
-  calendar: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0
-  },
-  weather: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0,
-  },
-  briefing: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    defaultValue: 0,
+  {
+    freezeTableName: true
   }
-}, {
-  freezeTableName: true
-})
+)
 
 exports.init = async () => {
   await Statistics.sync({ force: true })

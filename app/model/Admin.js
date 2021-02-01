@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt')
 
 const { Sequelize, sequelize } = require('../bootstrap/database')
 
-const hashPassword = (admin) => {
+const hashPassword = admin => {
   if (!admin.changed('password')) {
     return
   }
@@ -14,24 +14,28 @@ const hashPassword = (admin) => {
 }
 
 // Admin 모델 정의
-const Admin = sequelize.define('Admin', {
-  id: {
-    type: Sequelize.STRING,
-    primaryKey: true
+const Admin = sequelize.define(
+  'Admin',
+  {
+    id: {
+      type: Sequelize.STRING,
+      primaryKey: true
+    },
+    password: {
+      type: Sequelize.STRING
+    },
+    salt: {
+      type: Sequelize.STRING
+    }
   },
-  password: {
-    type: Sequelize.STRING
-  },
-  salt: {
-    type: Sequelize.STRING
+  {
+    freezeTableName: true,
+    hooks: {
+      beforeCreate: hashPassword,
+      beforeUpdate: hashPassword
+    }
   }
-}, {
-  freezeTableName: true,
-  hooks: {
-    beforeCreate: hashPassword,
-    beforeUpdate: hashPassword
-  }
-})
+)
 
 exports.init = async (id, password) => {
   Admin.prototype.validPassword = async function (password) {
@@ -77,12 +81,15 @@ exports.list = () => {
 }
 
 exports.update = admin => {
-  return Admin.update({
-    password: admin.password
-  }, {
-    individualHooks: true,
-    where: {
-      id: admin.id
+  return Admin.update(
+    {
+      password: admin.password
+    },
+    {
+      individualHooks: true,
+      where: {
+        id: admin.id
+      }
     }
-  })
+  )
 }

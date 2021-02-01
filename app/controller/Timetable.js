@@ -11,7 +11,6 @@
 // Timetable._weekdayString = ['일', '월', '화', '수', '목', '금', '토']
 // Timetable._numberEmoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣']
 
-
 // Timetable.init = async function (schoolKeyword) {
 //   this._school = schoolKeyword
 //   await TimetableModel.init()

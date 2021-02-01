@@ -5,23 +5,25 @@ const { timeStamp } = require('../common/util')
 const Admin = require('../controller/Admin')
 
 // Passport 전략 정의
-passport.use(new Strategy(
-  {
-    usernameField: 'id',
-    passwordField: 'password',
-    session: true
-  },
-  (id, password, done) => {
-    const user = { id, password }
-    Admin.auth(user).then(auth => {
-      if (auth) {
-        done(null, user)
-      } else {
-        done(null, false)
-      }
-    })
-  }
-))
+passport.use(
+  new Strategy(
+    {
+      usernameField: 'id',
+      passwordField: 'password',
+      session: true
+    },
+    (id, password, done) => {
+      const user = { id, password }
+      Admin.auth(user).then(auth => {
+        if (auth) {
+          done(null, user)
+        } else {
+          done(null, false)
+        }
+      })
+    }
+  )
+)
 
 // 로그인 성공 시 유저 정보 직렬화
 passport.serializeUser((user, done) => {
@@ -57,7 +59,11 @@ exports.logout = (req, res) => {
 
 // 인증 상태 확인
 exports.authenticate = (req, res) => {
-  console.log(timeStamp() + '인증상태: ' + (req.isAuthenticated() ? 'true'.green : 'false'.red))
+  console.log(
+    timeStamp() +
+      '인증상태: ' +
+      (req.isAuthenticated() ? 'true'.green : 'false'.red)
+  )
   res.json({ auth: req.isAuthenticated() })
 }
 

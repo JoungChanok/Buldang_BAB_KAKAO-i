@@ -8,7 +8,8 @@
     "test": "standard && node my-tests.js",
     "fix": "standard --fix",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "format": "prettier-standard --format"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "snyk": "^1.437.3"
   },
   "devDependencies": {
+    "prettier-standard": "^16.4.1",
     "standard": "^14.3.4"
   },
   "standard": {

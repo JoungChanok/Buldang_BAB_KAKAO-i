@@ -11,9 +11,9 @@ module.exports = app => {
     await statistics.count('BRIEFING')
     const calendarData = await calcontroller.get()
     const weatherData = await weathercontroller.get()
-    const params = req.body.action['params'] || {}
-    const type = JSON.parse(params['sys_date'] || '{ "dateTag": "today" }') 
-    const mealData = await mealcontroller.get(type['dateTag'])
+    const params = req.body.action.params || {}
+    const type = JSON.parse(params.sys_date || '{ "dateTag": "today" }')
+    const mealData = await mealcontroller.get(type.dateTag)
 
     res.json({
       version: '2.0',
@@ -21,7 +21,9 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description: '📅 이번 달 학사일정입니다!\n(때에 따라선 공백일 수 있습니다)\n' + calendarData
+              description:
+                '📅 이번 달 학사일정입니다!\n(때에 따라선 공백일 수 있습니다)\n' +
+                calendarData
             }
           },
           {

@@ -1,22 +1,26 @@
 const { Sequelize, sequelize } = require('../bootstrap/database')
 
 // Calendar 모델 정의
-const Calendar = sequelize.define('Calendar', {
-  month: {
-    type: Sequelize.INTEGER,
-    allowNull: false
+const Calendar = sequelize.define(
+  'Calendar',
+  {
+    month: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    day: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    content: {
+      type: Sequelize.STRING(50),
+      allowNull: false
+    }
   },
-  day: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  },
-  content: {
-    type: Sequelize.STRING(50),
-    allowNull: false
+  {
+    freezeTableName: true
   }
-}, {
-  freezeTableName: true
-})
+)
 
 exports.init = () => {
   return Calendar.sync({ force: true })

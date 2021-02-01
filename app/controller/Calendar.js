@@ -24,7 +24,7 @@ Calendar.get = async function () {
     const rows = await CalendarModel.get()
     let resultString = ''
     if (rows) {
-      for (let row of rows) {
+      for (const row of rows) {
         resultString += `${row.month}월 ${row.day}일: ${row.content}\n`
       }
       return resultString.replace(/\n$/, '')

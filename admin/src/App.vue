@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
 
 <style lang="scss">
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -18,7 +19,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(#739AD9, #96C6E7, #7FC6CE, #80CECB);
+  background-image: linear-gradient(#739ad9, #96c6e7, #7fc6ce, #80cecb);
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,7 +34,7 @@ html, body {
     outline: none;
     border: none;
     border-radius: 20px;
-    transition: .2s;
+    transition: 0.2s;
     padding: 10px 20px;
     margin-top: 10px;
     text-align: center;
@@ -73,11 +74,13 @@ html, body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 
-.fade-enter, .fade-leave-to  {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

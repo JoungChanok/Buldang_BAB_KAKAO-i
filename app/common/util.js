@@ -30,10 +30,10 @@ const timeStamp = () => {
 }
 
 const sqlInjectVaildate = str => {
-  const filter = ['\'', '"', ';', '*', 'DELETE', 'DROP']
-  for (let flt of filter) {
+  const filter = ["'", '"', ';', '*', 'DELETE', 'DROP']
+  for (const flt of filter) {
     if (str.toUpperCase().include(flt)) {
-      throw new Error(`😠 SQL Injection 공격이 감지되었습니다.`)
+      throw new Error('😠 SQL Injection 공격이 감지되었습니다.')
     }
   }
 }
