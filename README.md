@@ -6,6 +6,8 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
+[![HitCount](http://hits.dwyl.com/JoungChanok/Buldang_BAB_KAKAO-i.svg)](http://hits.dwyl.com/JoungChanok/Buldang_BAB_KAKAO-i)
+
 </div>
 
 # BULDANG-BAB-KAKAO-i
