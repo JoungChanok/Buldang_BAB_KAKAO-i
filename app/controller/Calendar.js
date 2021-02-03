@@ -11,7 +11,10 @@ Calendar.init = async function (school) {
 
 Calendar.update = async function () {
   try {
-    const result = await this.school.getCalendar()
+    const result = await this.school.getCalendar({
+      default: '',
+      separator: '\n'
+    })
     await CalendarModel.update(result)
     console.log(timeStamp() + '이번달 일정 데이터를 갱신합니다.'.green)
   } catch (e) {
@@ -28,8 +31,6 @@ Calendar.get = async function () {
         resultString += `${row.month}월 ${row.day}일: ${row.content}\n`
       }
       return resultString.replace(/\n$/, '')
-    } else {
-      return resultString + '😥 학사일정 정보가 없습니다 😥'
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)

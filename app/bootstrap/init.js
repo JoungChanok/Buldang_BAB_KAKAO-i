@@ -11,11 +11,18 @@ const statistics = require('../controller/Statistics')
 const calendar = require('../controller/Calendar')
 const weather = require('../controller/Weather')
 
+const mainSkill = require('../skill/main')
 const mealSkill = require('../skill/meal')
+const mealselectSkill = require('../skill/mealselect')
 // const timetableSkill = require('../skill/timetable') 지원 종료
 const calendarSkill = require('../skill/calendar')
 const statSkill = require('../skill/statistics')
 const weatherSkill = require('../skill/weather')
+const helpSkill = require('../skill/help')
+const contactSkill = require('../skill/contact')
+const bambooSkill = require('../skill/bamboo')
+const developerSkill = require('../skill/developer')
+
 const briefingSkill = require('../skill/briefing')
 
 const { timeStamp } = require('../common/util')
@@ -62,12 +69,18 @@ module.exports = async (app, express) => {
   app.use(passport.session())
 
   // Openbuilder 스킬 라우팅 등록
+  mainSkill(app)
   mealSkill(app)
+  mealselectSkill(app)
   statSkill(app)
   // timetableSkill(app) 지원 종료
   calendarSkill(app)
   weatherSkill(app)
+  helpSkill(app)
   briefingSkill(app)
+  contactSkill(app)
+  bambooSkill(app)
+  developerSkill(app)
   require('../route/admin')(app)
 
   console.log(

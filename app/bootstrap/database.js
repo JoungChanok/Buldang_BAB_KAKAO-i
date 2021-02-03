@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   config.get('database.password'),
   {
     define: {
-      charset: 'utf8'
+      charset: 'utf8mb4' // emoji 사용을 위한 인코딩 방식 변경
     },
     host: config.get('database.host'),
     port: config.get('database.port'),

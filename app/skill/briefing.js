@@ -21,9 +21,7 @@ module.exports = app => {
         outputs: [
           {
             basicCard: {
-              description:
-                '📅 이번 달 학사일정입니다!\n(때에 따라선 공백일 수 있습니다)\n' +
-                calendarData
+              description: '📅 이번 달 학사일정입니다!\n\n' + calendarData
             }
           },
           {
@@ -33,7 +31,7 @@ module.exports = app => {
           },
           {
             basicCard: {
-              description: '🍚 오늘의 급식을 알려드릴게요!\n\n' + mealData
+              description: '🍚 오늘의 급식정보입니다!\n\n' + mealData
             }
           }
         ],

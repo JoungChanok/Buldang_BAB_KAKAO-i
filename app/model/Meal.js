@@ -14,8 +14,7 @@ const Meal = sequelize.define(
     }
   },
   {
-    freezeTableName: true,
-    charset: 'utf8mb4'
+    freezeTableName: true
   }
 )
 
