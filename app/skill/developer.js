@@ -5,8 +5,6 @@ const routerName = config.get('proxy') + '/developer'
 
 module.exports = app => {
   app.post(routerName, async (req, res) => {
-    await statistics.count('DEVELOPER')
-
     res.json({
       version: '2.0',
       template: {

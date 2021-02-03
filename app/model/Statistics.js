@@ -28,6 +28,21 @@ const Statistics = sequelize.define(
       type: Sequelize.INTEGER,
       allowNull: false,
       defaultValue: 0
+    },
+    bamboo: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    help: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    main: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     }
   },
   {
@@ -39,6 +54,9 @@ exports.init = async () => {
   await Statistics.sync({ force: true })
   await Statistics.create({
     meal: 0,
+    main: 0,
+    bamboo: 0,
+    help: 0,
     // timetable: 0, 지원 종료
     calendar: 0,
     weather: 0,
@@ -53,6 +71,9 @@ exports.reset = async () => {
   })
   await Statistics.create({
     meal: 0,
+    main: 0,
+    bamboo: 0,
+    help: 0,
     // timetable: 0, 지원 종료
     calendar: 0,
     weather: 0,

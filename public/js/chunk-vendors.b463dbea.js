@@ -3290,8 +3290,7 @@
                   !K &&
                   !Z &&
                   'undefined' !== typeof e &&
-                  e['process'] &&
-                  'server' === e['process'].env.VUE_ENV),
+                  e['process'] && 'server' === e['process'].env.VUE_ENV),
               G
             )
           },
@@ -24346,9 +24345,9 @@
                   b(e.query, t.query)
                 : !(!e.name || !t.name) &&
                   e.name === t.name &&
-                  e.hash === t.hash &&
-                  b(e.query, t.query) &&
-                  b(e.params, t.params))
+                    e.hash === t.hash &&
+                    b(e.query, t.query) &&
+                    b(e.params, t.params))
       }
       function b (e, t) {
         if ((void 0 === e && (e = {}), void 0 === t && (t = {}), !e || !t))
@@ -25207,8 +25206,7 @@
               -1 === e.indexOf('Mobile Safari') ||
               -1 !== e.indexOf('Chrome') ||
               -1 !== e.indexOf('Windows Phone')) &&
-            window.history &&
-            'function' === typeof window.history.pushState
+            window.history && 'function' === typeof window.history.pushState
           )
         })()
       function Ee (e, t) {
@@ -29121,10 +29119,10 @@
     c1df: function (e, t, n) {
       ;(function (e) {
         var t //! moment.js
-          //! version : 2.29.1
-          //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
-          //! license : MIT
-          //! momentjs.com
+        //! version : 2.29.1
+        //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+        //! license : MIT
+        //! momentjs.com
         ;(function (t, n) {
           e.exports = n()
         })(0, function () {
@@ -32925,8 +32923,7 @@
             ('ReactNative' !== navigator.product &&
               'NativeScript' !== navigator.product &&
               'NS' !== navigator.product)) &&
-          'undefined' !== typeof window &&
-          'undefined' !== typeof document
+          'undefined' !== typeof window && 'undefined' !== typeof document
         )
       }
       function k (e, t) {

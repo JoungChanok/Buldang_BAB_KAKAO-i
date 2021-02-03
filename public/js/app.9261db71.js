@@ -447,8 +447,8 @@
           ])
         }
       ],
-      j = (s('d3b7'), s('30ef')),
-      b = s.n(j),
+      b = (s('d3b7'), s('30ef')),
+      j = s.n(b),
       h = {
         name: 'home',
         data: function () {
@@ -492,16 +492,24 @@
                   s.data && (e.chartData = s.data), t()
                 })
                 .catch(function (t) {
-                  ;(e.chartData = [1, 1, 1, 1, 1]), s(t)
+                  ;(e.chartData = [1, 1, 1, 1, 1, 1, 1]), s(t)
                 })
             })
           },
           drawChart: function () {
             var e = document.getElementById('chart').getContext('2d')
-            this.chart = new b.a(e, {
+            this.chart = new j.a(e, {
               type: 'pie',
               data: {
-                labels: ['급식', '학사일정', '날씨 예보', '브리핑', '기타'],
+                labels: [
+                  '시작하기',
+                  '브리핑',
+                  '급식',
+                  '날씨 예보',
+                  '학사일정',
+                  '도움말',
+                  '대나무숲'
+                ],
                 datasets: [
                   {
                     label: '# of Usage',
@@ -511,14 +519,18 @@
                       'rgba(255, 206, 86, 0.5)',
                       'rgba(75, 192, 192, 0.5)',
                       'rgba(54, 162, 235, 0.5)',
-                      'rgba(255, 159, 64, 0.5)'
+                      'rgba(255, 111, 222, 0.5)',
+                      'rgba(255, 184, 136, 0.5)',
+                      'rgba(255, 86, 172, 0.5)'
                     ],
                     borderColor: [
                       'rgba(255,99,132,1)',
                       'rgba(255, 206, 86, 1)',
                       'rgba(75, 192, 192, 1)',
                       'rgba(54, 162, 235, 1)',
-                      'rgba(255, 159, 64, 1)'
+                      'rgba(255, 111, 222, 1)',
+                      'rgba(255, 184, 136, 1)',
+                      'rgba(255, 86, 172, 1)'
                     ],
                     borderWidth: 1
                   }
@@ -557,9 +569,9 @@
           }
         }
       },
-      p = h,
-      g = (s('21bb'), Object(o['a'])(p, u, l, !1, null, null, null)),
-      m = g.exports,
+      g = h,
+      p = (s('21bb'), Object(o['a'])(g, u, l, !1, null, null, null)),
+      m = p.exports,
       A = function () {
         var e = this,
           t = e.$createElement,
@@ -725,4 +737,4 @@
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsSAAALEgHS3X78AAADk0lEQVR4Xu2bW3LjMAwE473/nb1RqpxyEr8kExKa0/6NDREzzYHEUk7n8/nDjwqoQKgCp5S+P5NuddSdPj+z6zN1g1tMf2T4jEBMB8Bo028BMRMIUwGwh/nXQMwAwhQA7G38TBDgATjS/AsI5CRAA9DBfDoEWAA6mU+GAAlAR/OpEOAA6Gw+EYJ/pJMugvkkPZe1ogCgiEsCFQMASVQKqCZAoVMUYBEJQBGzkKey0ggAyrq3sDeB6QyYAIUEEEZXewAIIhYyVF66PQDlCoRfQAAEIFyB8PZNAAEIVyC8fRNAAMIVCG8f8UII9SyA8LKoIyA8AQRAAMIVCG/fBBCAcAXC22//FEB9Arhw1f1JoDUAdPMJEHgPED4CBEAAwhUIb98EEIBwBcLbNwEEIFyB8PZNAAEIVyC8/dYngYs39NPA7kfBjoDwBBAAAQhXILz99vcA5PuA7vN/0dYRYAKwFOj+VEDY9deOmwAs/oevVgCGS8oqKAAsv4avVgCGS8oqiHgM/C1p1xtB2g2gj4GszVqyWkdAiaycosgR0PF0kBj/jgDORi1bKTYBOqUAdfebAGX7ilMYnQAdUoC8+00AzkYtWyk+AY5MAfruX7SbAoAjIJjBfEdAWbByCnsSyPGqZKUCUCIrp6gAcLwqWakAlMjKKSoAHK9KVioAJbJyigrARq+6vpW0tp0pAJjFjLXmjfj+FACMECK1Bv4o+OjdTz8SxgJwtPG3EoMIAw6Ajsb/hoEEAgIAgunURGgNANV4UiK0BGAW4wmp0AaAmU3vDMLhAKQZ3w2GQwDQ9PvHTns/QewCgIZvP2esBqIEAA3fbvizX44GYhgAmv7MurF/HwXC2wBo/Fhj11Z7F4TNAGj8Wqtqv78VhNUAaHytke9WXwvCKgA0/1179vn9GgheBkDz9zFv1FVeheAlADR/lC371nkFgqcAaP6+po2+2jMIHgKg+aPtOKbeIwjuAqD5x5hVddV7EPhWcJXikLo3E8DdD3Fv5TJvpYAJsFLE2b7+JwHc/bNZ/LOf3ynwAwDNn9v8S3fXEDgCMjy/26UAhAPwPQKM/ywSLmPABMjy/U+3AhAOwNcIMP4zKVjGgAmQ6f131wIgAOEKhLd/cv5nE+AIyPb/QwAEIFyB8PZNAAEIVyC8fRNAAMIVCG/fBBCAcAXC2zcBBCBcgfD2fR8gGIDlfQDfCQwF4Nl/DYfKYtsqEKbAf/UK85z2zz6wAAAAAElFTkSuQmCC'
   }
 })
-//# sourceMappingURL=app.77e24019.js.map
+//# sourceMappingURL=app.9261db71.js.map
