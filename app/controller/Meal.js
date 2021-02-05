@@ -14,7 +14,7 @@ Meal.init = async function (school) {
 Meal.update = async function () {
   try {
     const mealInfo = await this.school.getMeal({
-      default: '\n\n\n😥 급식 정보가 없습니다 😥\n\n\n\nㅤ'
+      default: '😥 급식 정보가 없습니다 😥'
     })
     const date = new Date()
 
@@ -45,6 +45,9 @@ Meal.get = async function (type) {
     tomorrow.setDate(today.getDate() + 1)
 
     if (type === 'today') {
+      if (meal[String(today.getDate())] === '😥 급식 정보가 없습니다 😥') {
+        return '😥 급식 정보가 없습니다 😥'
+      }
       return (
         `${today.getMonth() + 1}월 ${today.getDate()}일 ${
           this._week[today.getDay()]
@@ -58,6 +61,9 @@ Meal.get = async function (type) {
           .replace('&amp;', '&')
       )
     } else if (type === 'tomorrow') {
+      if (meal[String(today.getDate())] === '😥 급식 정보가 없습니다 😥') {
+        return '😥 급식 정보가 없습니다 😥'
+      }
       if (tomorrow.getMonth() != today.getMonth()) {
         return '🤮 내일 급식은 내일 확인이 가능해요'
       }

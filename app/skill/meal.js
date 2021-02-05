@@ -47,8 +47,8 @@ module.exports = app => {
   })
 
   app.post(mealWeekRouterName, async (req, res) => {
+    await statistics.count('MEAL')
     const mealWeekData = await controller.getWeek()
-
     const items = mealWeekData.map(data => {
       return {
         description: data.date + '\n\n' + data.meal,
