@@ -22,6 +22,7 @@ const helpSkill = require('../skill/help')
 const contactSkill = require('../skill/contact')
 const bambooSkill = require('../skill/bamboo')
 const developerSkill = require('../skill/developer')
+const welcomeSkill = require('../skill/welcome')
 
 const briefingSkill = require('../skill/briefing')
 
@@ -81,6 +82,7 @@ module.exports = async (app, express) => {
   contactSkill(app)
   bambooSkill(app)
   developerSkill(app)
+  welcomeSkill(app)
   require('../route/admin')(app)
 
   console.log(
