@@ -39,8 +39,10 @@ Statistics.get = async function () {
   try {
     const stat = await StatisticsModel.get()
     if (stat) {
+      const usertotal =
+        stat.welcome
+
       const total =
-        stat.welcome +
         stat.main +
         stat.briefing +
         stat.meal +
@@ -51,6 +53,7 @@ Statistics.get = async function () {
         stat.bamboo
 
       return (
+        `😁 사용자 수: ${usertotal}명\n\n` +
         `🎉 시작하기: ${((stat.main / total) * 100).toFixed(2)}%\n\n` +
         `🚥 브리핑: ${((stat.briefing / total) * 100).toFixed(2)}%\n\n` +
         `🍚 급식: ${((stat.meal / total) * 100).toFixed(2)}%\n\n` +
