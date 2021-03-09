@@ -24,6 +24,11 @@ const Statistics = sequelize.define(
       allowNull: false,
       defaultValue: 0
     },
+    welcome: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
     briefing: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -60,6 +65,7 @@ exports.init = async () => {
     // timetable: 0, 지원 종료
     calendar: 0,
     weather: 0,
+    welcome: 0,
     briefing: 0
   })
 }
@@ -76,6 +82,7 @@ exports.reset = async () => {
     help: 0,
     // timetable: 0, 지원 종료
     calendar: 0,
+    welcome: 0,
     weather: 0,
     briefing: 0
   })

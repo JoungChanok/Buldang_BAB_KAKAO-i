@@ -8,6 +8,7 @@ Statistics.type = {
   BRIEFING: 'briefing',
   MEAL: 'meal',
   WEATHER: 'weather',
+  WELCOME: 'welcome',
   CALENDAR: 'calendar',
   HELP: 'help',
   BAMBOO: 'bamboo'
@@ -39,6 +40,7 @@ Statistics.get = async function () {
     const stat = await StatisticsModel.get()
     if (stat) {
       const total =
+        stat.welcome +
         stat.main +
         stat.briefing +
         stat.meal +
@@ -49,12 +51,13 @@ Statistics.get = async function () {
         stat.bamboo
 
       return (
+        `😁 사용자 수: ${((stat.welcome / total) * 100).toFixed(2)}%\n\n` +
         `🎉 시작하기: ${((stat.main / total) * 100).toFixed(2)}%\n\n` +
         `🚥 브리핑: ${((stat.briefing / total) * 100).toFixed(2)}%\n\n` +
         `🍚 급식: ${((stat.meal / total) * 100).toFixed(2)}%\n\n` +
         //  `📘 시간표: ${(stat['timetable'] / total * 100).toFixed(2)}%\n\n` + 지원 종료
-        `⛅ 날씨: ${((stat.weather / total) * 100).toFixed(2)}%\n\n` +
         `📅 학사일정: ${((stat.calendar / total) * 100).toFixed(2)}%\n\n` +
+        `⛅ 날씨: ${((stat.weather / total) * 100).toFixed(2)}%\n\n` +
         `😉 도움말: ${((stat.help / total) * 100).toFixed(2)}%\n\n` +
         `🎍 대나무숲: ${((stat.bamboo / total) * 100).toFixed(2)}%\n\n` +
         `✔️ 전체 기능 요청 수: ${total}회`
@@ -74,19 +77,20 @@ Statistics.getData = async function () {
     if (stat) {
       const data = []
 
+      data.push(stat.welcome)
       data.push(stat.main)
       data.push(stat.briefing)
       data.push(stat.meal)
+      data.push(stat.calendar)
       data.push(stat.weather)
       // data.push(stat['timetable']) 지원 종료
-      data.push(stat.calendar)
       data.push(stat.help)
       data.push(stat.bamboo)
       return data
     }
   } catch (e) {
     console.log(timeStamp() + e.message.red)
-    return [1, 1, 1, 1, 1, 1, 1]
+    return [1, 1, 1, 1, 1, 1, 1, 1]
   }
 }
 

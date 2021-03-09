@@ -64,7 +64,7 @@ export default {
             resolve()
           })
           .catch(e => {
-            this.chartData = [1, 1, 1, 1, 1, 1, 1]
+            this.chartData = [1, 1, 1, 1, 1, 1, 1, 1]
             reject(e)
           })
       })
@@ -75,6 +75,7 @@ export default {
         type: 'pie',
         data: {
           labels: [
+            '사용자 수',
             '시작하기',
             '브리핑',
             '급식',
@@ -95,7 +96,8 @@ export default {
                 'rgba(54, 162, 235, 0.5)',
                 'rgba(255, 111, 222, 0.5)',
                 'rgba(255, 184, 136, 0.5)',
-                'rgba(255, 86, 172, 0.5)'
+                'rgba(255, 86, 172, 0.5)',
+                'rgba(123, 45, 132, 0.5)'
               ],
               borderColor: [
                 'rgba(255,99,132,1)',
@@ -105,7 +107,8 @@ export default {
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 111, 222, 1)',
                 'rgba(255, 184, 136, 1)',
-                'rgba(255, 86, 172, 1)'
+                'rgba(255, 86, 172, 1)',
+                'rgba(123, 45, 132, 1)'
               ],
               borderWidth: 1
             }
