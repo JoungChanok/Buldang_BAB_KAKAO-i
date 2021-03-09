@@ -51,7 +51,6 @@ Statistics.get = async function () {
         stat.bamboo
 
       return (
-        `😁 사용자 수: ${((stat.welcome / total) * 100).toFixed(2)}%\n\n` +
         `🎉 시작하기: ${((stat.main / total) * 100).toFixed(2)}%\n\n` +
         `🚥 브리핑: ${((stat.briefing / total) * 100).toFixed(2)}%\n\n` +
         `🍚 급식: ${((stat.meal / total) * 100).toFixed(2)}%\n\n` +
