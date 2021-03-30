@@ -2,7 +2,6 @@ const config = require('config')
 const statistics = require('../controller/Statistics')
 const calcontroller = require('../controller/Calendar')
 const mealcontroller = require('../controller/Meal')
-const weathercontroller = require('../controller/Weather')
 
 const routerName = config.get('proxy') + '/briefing'
 
@@ -10,7 +9,6 @@ module.exports = app => {
   app.post(routerName, async (req, res) => {
     await statistics.count('BRIEFING')
     const calendarData = await calcontroller.get()
-    const weatherData = await weathercontroller.get()
     const params = req.body.action.params || {}
     const type = JSON.parse(params.sys_date || '{ "dateTag": "today" }')
     const mealData = await mealcontroller.get(type.dateTag)
