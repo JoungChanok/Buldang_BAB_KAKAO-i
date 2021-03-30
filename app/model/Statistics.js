@@ -9,11 +9,11 @@ const Statistics = sequelize.define(
       allowNull: false,
       defaultValue: 0
     },
-    timetable: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
+    // timetable: {
+    //   type: Sequelize.INTEGER,
+    //   allowNull: false,
+    //   defaultValue: 0
+    // },
     calendar: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -62,7 +62,7 @@ exports.init = async () => {
     main: 0,
     bamboo: 0,
     help: 0,
-    timetable: 0,
+    // timetable: 0,
     calendar: 0,
     // weather: 0,
     welcome: 0,
@@ -80,7 +80,7 @@ exports.reset = async () => {
     main: 0,
     bamboo: 0,
     help: 0,
-    timetable: 0,
+    // timetable: 0,
     calendar: 0,
     welcome: 0,
     // weather: 0,
