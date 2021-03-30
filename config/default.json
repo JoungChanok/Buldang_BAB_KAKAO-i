@@ -1,16 +1,16 @@
 {
   "port": 3000,
-  "schoolCode": "N100002892", 
-  "api_key": "", 
+  "schoolCode": "N100002892",
+  "api_key": "",
   "proxy": "/bdhigh/api/",
   "admin": {
-    "id": "chanok9417", 
-    "password": "asad242!" 
+    "id": "chanok9417",
+    "password": "asad242!"
   },
   "database": {
-    "db": "bdbab", 
+    "db": "bdbab",
     "user": "root",
-    "password": "asad242!", 
+    "password": "asad242!",
     "host": "localhost",
     "port": 3306
   }

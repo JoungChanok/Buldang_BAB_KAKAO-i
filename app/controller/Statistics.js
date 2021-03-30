@@ -39,8 +39,7 @@ Statistics.get = async function () {
   try {
     const stat = await StatisticsModel.get()
     if (stat) {
-      const usertotal =
-        stat.welcome
+      const usertotal = stat.welcome
 
       const total =
         stat.main +
