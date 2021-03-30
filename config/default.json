@@ -1,8 +1,8 @@
 {
-  "port": 3000,
+  "port": 10000,
   "schoolCode": "N100002892",
   "api_key": "",
-  "proxy": "/bdhigh/api/",
+  "proxy": "/bdhigh/api",
   "admin": {
     "id": "chanok9417",
     "password": "asad242!"
