@@ -33,7 +33,7 @@
     "cheerio": "^1.0.0-rc.3",
     "colors": "^1.4.0",
     "comcigan-parser": "^0.2.0",
-    "config": "^3.3.4",
+    "config": "^3.3.6",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
