@@ -24,11 +24,11 @@ module.exports = app => {
               description: '📅 이번 달 학사일정입니다!\n\n' + calendarData
             }
           },
-          {
-            basicCard: {
-              description: '🌈 기상청 날씨정보입니다!\n\n' + weatherData
-            }
-          },
+          // {
+          //   basicCard: {
+          //     description: '🌈 기상청 날씨정보입니다!\n\n' + weatherData
+          //   }
+          // },
           {
             basicCard: {
               description: '🍚 오늘의 급식정보입니다!\n\n' + mealData
