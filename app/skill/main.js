@@ -56,20 +56,20 @@ module.exports = app => {
                     }
                   ]
                 },
-                {
-                  title: '⛅ 오늘 날씨는 어때?',
-                  thumbnail: {
-                    imageUrl:
-                      'http://k.kakaocdn.net/dn/WDAIH/btqycgP48gU/xIwlL8LzIgdUFdNfF1yqb0/2x1.jpg'
-                  },
-                  buttons: [
-                    {
-                      action: 'block',
-                      label: '날씨 확인하기',
-                      blockId: '5d5be15e8192ac00011f0322'
-                    }
-                  ]
-                },
+                // {
+                //   title: '⛅ 오늘 날씨는 어때?',
+                //   thumbnail: {
+                //     imageUrl:
+                //       'http://k.kakaocdn.net/dn/WDAIH/btqycgP48gU/xIwlL8LzIgdUFdNfF1yqb0/2x1.jpg'
+                //   },
+                //   buttons: [
+                //     {
+                //       action: 'block',
+                //       label: '날씨 확인하기',
+                //       blockId: '5d5be15e8192ac00011f0322'
+                //     }
+                //   ]
+                // },
                 {
                   title: '📊 통계가 궁금해',
                   thumbnail: {

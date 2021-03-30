@@ -7,17 +7,17 @@ const passport = require('passport')
 const admin = require('../controller/Admin')
 const meal = require('../controller/Meal')
 const statistics = require('../controller/Statistics')
-// const timetable = require('../controller/Timetable') 지원 종료
+// const timetable = require('../controller/Timetable')
 const calendar = require('../controller/Calendar')
-const weather = require('../controller/Weather')
+// const weather = require('../controller/Weather')
 
 const mainSkill = require('../skill/main')
 const mealSkill = require('../skill/meal')
 const mealselectSkill = require('../skill/mealselect')
-// const timetableSkill = require('../skill/timetable') 지원 종료
+// const timetableSkill = require('../skill/timetable')
 const calendarSkill = require('../skill/calendar')
 const statSkill = require('../skill/statistics')
-const weatherSkill = require('../skill/weather')
+// const weatherSkill = require('../skill/weather')
 const helpSkill = require('../skill/help')
 const contactSkill = require('../skill/contact')
 const bambooSkill = require('../skill/bamboo')
@@ -44,14 +44,14 @@ module.exports = async (app, express) => {
   await admin.init()
   await meal.init(school)
   await statistics.init()
-  // await timetable.init('천안불당고등학교') 지원 종료
+  // await timetable.init('천안불당고등학교')
   await calendar.init(school)
-  await weather.init()
+  // await weather.init()
 
   await meal.update()
-  // await timetable.update() 지원 종료
+  // await timetable.update()
   await calendar.update()
-  await weather.update()
+  // await weather.update()
 
   await require('./scheduler').init()
 
@@ -74,9 +74,9 @@ module.exports = async (app, express) => {
   mealSkill(app)
   mealselectSkill(app)
   statSkill(app)
-  // timetableSkill(app) 지원 종료
+  // timetableSkill(app)
   calendarSkill(app)
-  weatherSkill(app)
+  // weatherSkill(app)
   helpSkill(app)
   briefingSkill(app)
   contactSkill(app)
