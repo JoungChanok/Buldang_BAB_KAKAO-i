@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "chart.js": "2.9.4",
+    "chart.js": "3.2.1",
     "node-forge": "0.10.0",
     "serialize-javascript": "5.0.1",
     "highlight.js": "10.7.2",
