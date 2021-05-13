@@ -1,7 +1,7 @@
 const { timeStamp } = require('../common/util')
 const StatisticsModel = require('../model/Statistics')
 
-var Statistics = {}
+const Statistics = {}
 
 Statistics.type = {
   MAIN: 'main',

@@ -1,7 +1,7 @@
 const { timeStamp } = require('../common/util')
 const CalendarModel = require('../model/Calendar')
 
-var Calendar = {}
+const Calendar = {}
 
 Calendar.init = async function (school) {
   this.school = school

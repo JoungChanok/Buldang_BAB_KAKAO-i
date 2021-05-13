@@ -1,7 +1,7 @@
 const { timeStamp } = require('../common/util')
 const { Meal: MealModel, init } = require('../model/Meal')
 
-var Meal = {}
+const Meal = {}
 
 Meal._week = ['일', '월', '화', '수', '목', '금', '토']
 

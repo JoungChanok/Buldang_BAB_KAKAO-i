@@ -3,7 +3,7 @@ const config = require('config')
 const { timeStamp } = require('../common/util')
 const AdminModel = require('../model/Admin')
 
-var Admin = {}
+const Admin = {}
 
 Admin.init = async () => {
   const id = config.get('admin.id')
