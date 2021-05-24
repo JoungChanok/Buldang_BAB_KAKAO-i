@@ -35,7 +35,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "highlight.js": "^10.7.2",
-    "iconv-lite": "^0.6.2",
+    "iconv-lite": "^0.6.3",
     "ini": "^2.0.0",
     "mysql2": "^2.2.5",
     "node-forge": "^0.10.0",
