@@ -1,43 +1,42 @@
+# Buldang_BAB_KAKAO-i
+
 <div align="center">
   
   ![](./kakao.png)
   
-  [천안불당고등학교 플러스친구](http://pf.kakao.com/_hxgXrC)
+  [불당밥 플러스친구](http://pf.kakao.com/_hxgXrC)
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-[![HitCount](http://hits.dwyl.com/JoungChanok/Buldang_BAB_KAKAO-i.svg)](http://hits.dwyl.com/JoungChanok/Buldang_BAB_KAKAO-i)
-
 </div>
 
-# BULDANG-BAB-KAKAO-i
+## Getting Started
 
-💬 천안불당고등학교 카카오 i 오픈빌더 챗봇
+### Prerequisites
 
-## 소개
+```
+Visual Studio Code
+node.js
+mariaDB
+```
 
-천안불당고등학교의 다양한 정보를 제공하는 카카오톡 챗봇입니다.
-
-- 주요 기능
-
-  - 🍚 오늘, 내일 급식 조회
-  - 📅 이번 달 학사일정 조회
-
-## 개발환경
-
-- Visual Studio Code
+### Installing
 
 ```
 npm install
-node main.js
+npm start
 ```
 
-카카오 플러스친구 ID : <b>불당밥</b>  
-카카오 플러스친구 프로필 [바로가기](http://pf.kakao.com/_hxgXrC)
+## Running the tests
 
-## 정보
+This project has been tested in the M1 MacBook Visual Studio Code.
 
-- 천안불당고등학교의 정보를 쉽게 확인할 수 있도록 도와주는 서비스입니다.
-- 서버: Node.js + MariaDB
-- 개발자: 정찬옥(참고 및 도와주신분: leegeunhyeok, HEY_CJAEWON)
-- 문의사항: chanok9417@kakao.com
+
+## Built With
+
+* [leegeunhyeok](https://github.com/leegeunhyeok) - Original author
+* [HEY_CJAEWON](https://github.com/cjaewon) - Technical Support
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/JoungChanok/Buldang_BAB_KAKAO-i/blob/main/LICENSE) file for details.
